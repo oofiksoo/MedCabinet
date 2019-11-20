@@ -6,9 +6,10 @@ const RecomendationsContainer = styled.section`
   min-height: 100%;
   min-width: 80%;
   background-image: url("../../Logo.png");
-  opacity: 0.5;
-  background-repeat: no-repeat;
+  opacity: 0.6;
+  background-repeat: repeat-y;
   background-size: 100%;
+  background-position: center;
   p {
     text-align: left;
     font-weight: bold;

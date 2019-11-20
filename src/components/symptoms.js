@@ -7,9 +7,9 @@ const SymptomsContainer = styled.section`
   min-height: 100%;
   min-width: 80%;
   background-image: url("../../Logo.png");
-  opacity: 0.5;
-  background-repeat: no-repeat;
-  background-size: 50%;
+  opacity: 0.6;
+  background-repeat: repeat-y;
+  background-size: 100%;
   background-position: center;
 `;
 const SFormContainer = styled.section`
