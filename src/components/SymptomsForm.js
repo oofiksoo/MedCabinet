@@ -60,7 +60,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
 
         .then(response => {
           setRecommendation(response.data);
-          console.log(response);
         })
 
         .catch(error => {
@@ -79,7 +78,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
 
         .then(response => {
           setRecommendation2(response.data);
-          console.log(response);
         })
 
         .catch(error => {
@@ -98,7 +96,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
 
         .then(response => {
           setRecommendation3(response.data);
-          console.log(response);
         })
 
         .catch(error => {
@@ -117,7 +114,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
 
         .then(response => {
           setRecommendation4(response.data);
-          console.log(response);
         })
 
         .catch(error => {
@@ -136,7 +132,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
 
         .then(response => {
           setRecommendation5(response.data);
-          console.log(response);
         })
 
         .catch(error => {
@@ -156,7 +151,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             name="Symptom1"
             onChange={e => {
               setSymptom(e.target.value);
-              console.log(e.target.value);
             }}
           >
             <option value="">Select A Symptom</option>
@@ -199,7 +193,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             name="Symptom2"
             onChange={e => {
               setSymptom2(e.target.value);
-              console.log(e.target.value);
             }}
           >
             <option value="">Select A Symptom</option>
@@ -242,7 +235,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             name="Symptom3"
             onChange={e => {
               setSymptom3(e.target.value);
-              console.log(e.target.value);
             }}
           >
             <option value="">Select A Symptom</option>
@@ -285,7 +277,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             name="Symptom4"
             onChange={e => {
               setSymptom4(e.target.value);
-              console.log(e.target.value);
             }}
           >
             <option value="">Select A Symptom</option>
@@ -328,7 +319,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             name="Symptom5"
             onChange={e => {
               setSymptom5(e.target.value);
-              console.log(e.target.value);
             }}
           >
             <option value="">Select A Symptom</option>

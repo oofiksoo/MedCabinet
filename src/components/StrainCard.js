@@ -10,13 +10,15 @@ const SCard = styled.div`
   border: 1px solid black;
   border-radius: 10px;
   min-width: 20vw;
-  min-height: 15vh;
+  min-height: 20vh;
+  max-width: 20vw;
+  max-height: 20vh;
 `;
 
 const StrainCard = props => {
   return (
     <SCard>
-      <img src={bud} alt="flower_image" width="80vw" height="80vh"></img>
+      <img src={bud} alt="flower_image" width="80vw" height="80vh" />
       <h2> {props.sName} </h2>
       <div className="Type">
         Type: <em> {props.race} </em>

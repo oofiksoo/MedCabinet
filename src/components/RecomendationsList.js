@@ -3,7 +3,7 @@ import axios from "axios";
 import StrainCard from "./StrainCard";
 import styled, { css } from "styled-components";
 
-const StrainsContainer = styled.section`
+const StrainsContainer = styled.section `
   display: flex;
   flex-direction: column;
   font-size: 1rem;
@@ -14,19 +14,19 @@ const StrainsContainer = styled.section`
     font-weight: bold;
   }
 `;
-const StrainListControl = styled.div`
+const StrainListControl = styled.div `
   display: flex;
   justify-content: space-around;
   padding: 2%;
 `;
-const StrainCardContainer = styled.div`
+const StrainCardContainer = styled.div `
   margin: 2%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding: 2%;
 `;
-const SButton = styled.button`
+const SButton = styled.button `
   background: forestgreen;
   min-height: 15vh;
   min-width: 15vw;
@@ -65,7 +65,6 @@ function RecomendationList(recomendation) {
 
         .then(response => {
           setStrains(response.data);
-          console.log(response);
         })
 
         .catch(error => {

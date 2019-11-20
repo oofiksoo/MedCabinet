@@ -4,7 +4,7 @@ import StrainCard from "./StrainCard";
 import styled, { css } from "styled-components";
 import SearchForm from "./searchform";
 
-const StrainsContainer = styled.section`
+const StrainsContainer = styled.section `
   display: flex;
   flex-direction: column;
   font-size: 1rem;
@@ -15,24 +15,24 @@ const StrainsContainer = styled.section`
     font-weight: bold;
   }
 `;
-const SearchContainer = styled.div`
+const SearchContainer = styled.div `
   padding: 2%;
 `;
 
-const StrainListControl = styled.div`
+const StrainListControl = styled.div `
   display: flex;
   justify-content: space-around;
   padding: 2%;
   background-color: white;
 `;
-const StrainCardContainer = styled.div`
+const StrainCardContainer = styled.div `
   margin: 2%;
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   padding: 0 2%;
 `;
-const SButton = styled.button`
+const SButton = styled.button `
   background: forestgreen;
   min-height: 15vh;
   min-width: 15vw;
@@ -71,7 +71,6 @@ const StrainList = props => {
 
         .then(response => {
           setStrains(response.data);
-          console.log(response);
         })
 
         .catch(error => {
@@ -100,7 +99,7 @@ const StrainList = props => {
       </SearchContainer>
       <p> All {type} strains listed below:</p>
       <StrainCardContainer>
-        {strains.slice(100, 130).map(strain => {
+        {strains.slice(0, 100).map(strain => {
           return (
             <StrainCard
               key={strain.id}
