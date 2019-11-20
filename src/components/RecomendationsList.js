@@ -6,8 +6,13 @@ import styled, { css } from "styled-components";
 const StrainsContainer = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2%;
+  font-size: 1rem;
+  min-height: 100%;
+  min-width: 80%;
+  p {
+    text-align: left;
+    font-weight: bold;
+  }
 `;
 const StrainListControl = styled.div`
   display: flex;
@@ -23,9 +28,10 @@ const StrainCardContainer = styled.div`
 `;
 const SButton = styled.button`
   background: forestgreen;
-  min-height: 20vh;
-  min-width: 20vw;
-  border-radius: 20px;
+  min-height: 15vh;
+  min-width: 15vw;
+  border: 1px solid forestgreen;
+  border-radius: 30px 10px 30px;
   color: white;
   margin: 0.5em 1em;
   padding: 0.25em 1em;
@@ -34,13 +40,14 @@ const SButton = styled.button`
     props.primary &&
     css`
       background: Purple;
-      color: white;
+      border: 1px solid Purple;
     `}
 
   ${props =>
     props.tertiary &&
     css`
       background: red;
+      border: 1px solid red;
     `}
 `;
 
@@ -82,7 +89,7 @@ function RecomendationList(recomendation) {
           Sativa
         </SButton>
       </StrainListControl>
-      <h2>Reccomended {type} strains listed below:</h2>
+      <p>Recommended {type} strains listed below:</p>
       <StrainCardContainer>
         {strains.slice(390, 410).map(strain => {
           return (

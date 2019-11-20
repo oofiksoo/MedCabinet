@@ -10,11 +10,6 @@ const StrainsContainer = styled.section`
   font-size: 1rem;
   min-height: 100%;
   min-width: 80%;
-  background-image: url("../../Logo.png");
-  opacity: 0.6;
-  background-repeat: repeat-y;
-  background-size: 100%;
-  background-position: center;
   p {
     text-align: left;
     font-weight: bold;
@@ -28,6 +23,7 @@ const StrainListControl = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 2%;
+  background-color: white;
 `;
 const StrainCardContainer = styled.div`
   margin: 2%;
@@ -38,9 +34,10 @@ const StrainCardContainer = styled.div`
 `;
 const SButton = styled.button`
   background: forestgreen;
-  min-height: 20vh;
-  min-width: 20vw;
-  border-radius: 20px;
+  min-height: 15vh;
+  min-width: 15vw;
+  border: 1px solid forestgreen;
+  border-radius: 30px 10px 30px;
   color: white;
   margin: 0.5em 1em;
   padding: 0.25em 1em;
@@ -49,13 +46,14 @@ const SButton = styled.button`
     props.primary &&
     css`
       background: Purple;
-      color: white;
+      border: 1px solid Purple;
     `}
 
   ${props =>
     props.tertiary &&
     css`
       background: red;
+      border: 1px solid red;
     `}
 `;
 
