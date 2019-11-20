@@ -50,7 +50,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
       axios
 
         .get(
-          `http://strainapi.evanbusse.com/VUGyzwt/strains/search/effect/${symptom}`
+          `https://strainapi.evanbusse.com/VUGyzwt/strains/search/effect/${symptom}`
         )
 
         .then(response => {
@@ -69,7 +69,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
       axios
 
         .get(
-          `http://strainapi.evanbusse.com/VUGyzwt/strains/search/effect/${symptom2}`
+          `https://strainapi.evanbusse.com/VUGyzwt/strains/search/effect/${symptom2}`
         )
 
         .then(response => {
