@@ -53,7 +53,7 @@ function RecomendationList(recomendation) {
       axios
 
         .get(
-          `http://strainapi.evanbusse.com/VUGyzwt/strains/search/race/${type}`
+          `https://strainapi.evanbusse.com/VUGyzwt/strains/search/race/${type}`
         )
 
         .then(response => {
