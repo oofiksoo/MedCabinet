@@ -52,7 +52,8 @@ export default function DashNav() {
         </NavLink>{" "}
         <NavLink to="/symptoms">
           <DashNavItem>
-            <i className="fas fa-notes-medical fa-3x"> </i> <p> My Symptoms </p>{" "}
+            <i className="fas fa-notes-medical fa-3x"> </i>{" "}
+            <p> Recommendations by Symptom </p>{" "}
           </DashNavItem>{" "}
         </NavLink>{" "}
         <NavLink to="/recomendations">

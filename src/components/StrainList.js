@@ -2,7 +2,6 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import StrainCard from "./StrainCard";
 import styled, { css } from "styled-components";
-
 const StrainsContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -40,7 +39,6 @@ const SButton = styled.button`
 const StrainList = props => {
   const [strains, setStrains] = useState([]);
   const [type, setType] = useState("Indica");
-  const [page, setPage] = useState();
 
   useEffect(() => {
     const getStrains = () => {
@@ -89,7 +87,6 @@ const StrainList = props => {
           );
         })}
       </StrainCardContainer>
-      <StrainListControl></StrainListControl>
     </StrainsContainer>
   );
 };

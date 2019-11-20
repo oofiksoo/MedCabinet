@@ -9,6 +9,10 @@ const RecomendationsContainer = styled.section`
   opacity: 0.5;
   background-repeat: no-repeat;
   background-size: 100%;
+  p {
+    text-align: left;
+    font-weight: bold;
+  }
 `;
 const SRecomendationsCont = styled.section`
   font-size: 1rem;
@@ -20,8 +24,6 @@ const SRecomendationsCont = styled.section`
 export default function Recomendations() {
   return (
     <RecomendationsContainer>
-      <h1> Hello $username </h1>
-      <p> Please review your Reccomended strains below: </p>
       <SRecomendationsCont>
         <RecomendationsList />>
       </SRecomendationsCont>

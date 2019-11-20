@@ -3,11 +3,26 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import styled, { css } from "styled-components";
+import RecommendationCard from "./RecommendationCard";
 const apiEndPoint = "";
 const SQuestionCont = styled.section`
   display: flex;
-  padding: 2% 10%;
+  flex-direction: column;
+  padding: 2%;
+  p {
+    text-align: left;
+    font-weight: bold;
+  }
 `;
+const QCont = styled.div`
+  display: flex;
+  justify-content: space-around;
+`;
+const RecContainer = styled.div`
+  padding: 2%;
+  display: flex;
+`;
+
 const SButton = styled.button`
   background: transparent;
   border-radius: 3px;
@@ -24,146 +39,136 @@ const SButton = styled.button`
     `}
 `;
 
-const sAcuity = (1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
-
 const SymptomsForm = ({ values, errors, touched, status }) => {
-  const [Symptoms, setSymptoms] = useState([]);
+  const [recommendation, setRecommendation] = useState([]);
+  const [recommendation2, setRecommendation2] = useState([]);
+  const [symptom2, setSymptom2] = useState();
+  const [symptom, setSymptom] = useState();
 
   useEffect(() => {
-    status && setSymptoms(Symptoms => [...Symptoms, status]);
-  }, [status]);
+    const getRecommendation = () => {
+      axios
 
+        .get(
+          `http://strainapi.evanbusse.com/VUGyzwt/strains/search/effect/${symptom}`
+        )
+
+        .then(response => {
+          setRecommendation(response.data);
+          console.log(response);
+        })
+
+        .catch(error => {
+          console.error("Server Error", error);
+        });
+    };
+    getRecommendation();
+  }, [symptom]);
+  useEffect(() => {
+    const getRecommendation2 = () => {
+      axios
+
+        .get(
+          `http://strainapi.evanbusse.com/VUGyzwt/strains/search/effect/${symptom2}`
+        )
+
+        .then(response => {
+          setRecommendation2(response.data);
+          console.log(response);
+        })
+
+        .catch(error => {
+          console.error("Server Error", error);
+        });
+    };
+    getRecommendation2();
+  }, [symptom2]);
   return (
     <Form>
       <SQuestionCont>
-        <p> Symptom 1: </p>{" "}
-        <Field as="select" name="Symptom1">
-          <option value="">Select A Symptom</option>
-          <option value="Depression">Depression</option>
-          <option value="Stress">Stress</option>
-          <option value="Insomnia">Insomnia</option>
-          <option value="Pain">Pain</option>
-          <option value="Muscle Spasms">Muscle Spasms</option>
-          <option value="Lack of Appetite">Lack of Appetite</option>
-        </Field>
-        {touched.Symptom1 && errors.Symptom1 && (
-          <p className="error-display"> {errors.Symptom1} </p>
-        )}{" "}
-        <p> Symptom Severity </p>{" "}
-        <Field
-          as="select"
-          name="S1Acutiy"
-          placeholder="Select Acuity of symptom"
-        >
-          <option value="1"> 1 </option>{" "}
-        </Field>{" "}
-        {touched.S1Acuity && errors.S1Acuity && (
-          <p className="error-display"> {errors.S1Acuity} </p>
-        )}{" "}
-      </SQuestionCont>{" "}
-      <SQuestionCont>
-        <p> Symptom 2: </p>{" "}
-        <Field as="select" name="Symptom2" placeholder="Symptom 2">
-          <option value="">Select A Symptom</option>
-          <option value="Depression">Depression</option>
-          <option value="Stress">Stress</option>
-          <option value="Insomnia">Insomnia</option>
-          <option value="Pain">Pain</option>
-          <option value="Muscle Spasms">Muscle Spasms</option>
-          <option value="Lack of Appetite">Lack of Appetite</option>
-        </Field>{" "}
-        {touched.Symptom2 && errors.Symptom2 && (
-          <p className="error-display"> {errors.Symptom1} </p>
-        )}{" "}
-        <p> Symptom Severity </p>{" "}
-        <Field
-          as="select"
-          name="S2Acutiy"
-          placeholder="Select Acuity of symptom"
-        >
-          <option value={sAcuity}> </option>{" "}
-        </Field>{" "}
-        {touched.S2Acuity && errors.S2Acuity && (
-          <p className="error-display"> {errors.S1Acuity} </p>
-        )}{" "}
-      </SQuestionCont>{" "}
-      <SQuestionCont>
-        <p> Symptom 3: </p>{" "}
-        <Field as="select" name="Symptom3" placeholder="Symptom 3">
-          <option value="">Select A Symptom</option>
-          <option value="Depression">Depression</option>
-          <option value="Stress">Stress</option>
-          <option value="Insomnia">Insomnia</option>
-          <option value="Pain">Pain</option>
-          <option value="Muscle Spasms">Muscle Spasms</option>
-          <option value="Lack of Appetite">Lack of Appetite</option>
-        </Field>{" "}
-        {touched.Symptom3 && errors.Symptom3 && (
-          <p className="error-display"> {errors.Symptom3} </p>
-        )}{" "}
-        <p> Symptom Severity </p>{" "}
-        <Field
-          as="select"
-          name="S3Acutiy"
-          placeholder="Select Acuity of symptom"
-        >
-          <option value={sAcuity}> </option>{" "}
-        </Field>{" "}
-        {touched.S3Acuity && errors.S3Acuity && (
-          <p className="error-display"> {errors.S3Acuity} </p>
-        )}{" "}
-      </SQuestionCont>{" "}
-      <SQuestionCont>
-        <p> Symptom 4: </p>{" "}
-        <Field as="select" name="Symptom4" placeholder="Symptom 4">
-          <option value="">Select A Symptom</option>
-          <option value="Depression">Depression</option>
-          <option value="Stress">Stress</option>
-          <option value="Insomnia">Insomnia</option>
-          <option value="Pain">Pain</option>
-          <option value="Muscle Spasms">Muscle Spasms</option>
-          <option value="Lack of Appetite">Lack of Appetite</option>
-        </Field>{" "}
-        {touched.Symptom4 && errors.Symptom4 && (
-          <p className="error-display"> {errors.Symptom4} </p>
-        )}{" "}
-        <p> Symptom Severity </p>{" "}
-        <Field
-          as="select"
-          name="S4Acutiy"
-          placeholder="Select Acuity of symptom"
-        >
-          <option value={sAcuity}> </option>
-        </Field>
-        {touched.S4Acuity && errors.S4Acuity && (
-          <p className="error-display"> {errors.S4Acuity} </p>
-        )}
+        <QCont>
+          <p> Select Symptom 1: </p>
+          <Field
+            as="select"
+            className="Symptom"
+            name="Symptom1"
+            onChange={e => {
+              setSymptom(e.target.value);
+              console.log(e.target.value);
+            }}
+          >
+            <option value="">Select A Symptom</option>
+            <option value="Depression">Depression</option>
+            <option value="Stress">Stress</option>
+            <option value="Insomnia">Insomnia</option>
+            <option value="Pain">Pain</option>
+            <option value="Muscle Spasms">Muscle Spasms</option>
+            <option value="Inflammation">Inflammation</option>
+            <option value="Fatigue">Fatigue</option>
+            <option value="Hungry">Lack of Appitite</option>
+            <option value="Seizures">Seizures</option>
+            <option value="Cramps">Cramps</option>
+          </Field>
+          {touched.Symptom1 && errors.Symptom1 && (
+            <p className="error-display"> {errors.Symptom1} </p>
+          )}
+        </QCont>
+        <p>Recommendations:</p>
+        <RecContainer>
+          {recommendation.slice(11, 16).map(strain => {
+            return (
+              <RecommendationCard
+                key={strain.id}
+                sName={strain.name}
+                race={strain.race}
+                id={strain.id}
+              />
+            );
+          })}
+        </RecContainer>
       </SQuestionCont>
+      <hr></hr>
       <SQuestionCont>
-        <p> Symptom 5: </p>
-        <Field as="select" name="Symptom5" placeholder="Symptom 5">
-          <option value="">Select A Symptom</option>
-          <option value="Depression">Depression</option>
-          <option value="Stress">Stress</option>
-          <option value="Insomnia">Insomnia</option>
-          <option value="Pain">Pain</option>
-          <option value="Muscle Spasms">Muscle Spasms</option>
-          <option value="Lack of Appetite">Lack of Appetite</option>
-        </Field>
-        {touched.Symptom5 && errors.Symptom5 && (
-          <p className="error-display"> {errors.Symptom5} </p>
-        )}
-        <p> Symptom Severity </p>
-        <Field
-          as="select"
-          name="S5Acutiy"
-          placeholder="Select Acuity of symptom"
-        >
-          <option value={sAcuity}> </option>
-        </Field>
-        {touched.S5Acuity && errors.S5Acuity && (
-          <p className="error-display"> {errors.S5Acuity} </p>
-        )}
+        <QCont>
+          <p> Select Symptom 2: </p>
+          <Field
+            as="select"
+            className="Symptom"
+            name="Symptom2"
+            onChange={e => {
+              setSymptom2(e.target.value);
+              console.log(e.target.value);
+            }}
+          >
+            <option value="">Select A Symptom</option>
+            <option value="Depression">Depression</option>
+            <option value="Stress">Stress</option>
+            <option value="Insomnia">Insomnia</option>
+            <option value="Pain">Pain</option>
+            <option value="Muscle Spasms">Muscle Spasms</option>
+            <option value="Inflammation">Inflammation</option>
+            <option value="Fatigue">Fatigue</option>
+            <option value="Hungry">Lack of Appitite</option>
+            <option value="Seizures">Seizures</option>
+            <option value="Cramps">Cramps</option>
+          </Field>
+          {touched.Symptom2 && errors.Symptom2 && (
+            <p className="error-display"> {errors.Symptom2} </p>
+          )}
+        </QCont>
+        <p>Recommendations:</p>
+        <RecContainer>
+          {recommendation2.slice(11, 16).map(strain => {
+            return (
+              <RecommendationCard
+                key={strain.id}
+                sName={strain.name}
+                race={strain.race}
+                id={strain.id}
+              />
+            );
+          })}
+        </RecContainer>
       </SQuestionCont>
       <SButton> Submit Symptoms </SButton>
     </Form>
@@ -173,33 +178,28 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
 export default withFormik({
   mapPropsToValues({
     Symptom1,
-    S1Acuity,
+
     Symptom2,
-    S2Acuity,
+
     Symptom3,
-    S3Acuity,
+
     Symptom4,
-    S4Acuity,
-    Symptom5,
-    S5Acuity
+
+    Symptom5
   }) {
     return {
       Symptom1: Symptom1 || "",
-      S1Acuity: S1Acuity || " ",
+
       Symptom2: Symptom2 || "",
-      S2Acuity: S2Acuity || " ",
+
       Symptom3: Symptom3 || "",
-      S3Acuity: S3Acuity || " ",
+
       Symptom4: Symptom4 || "",
-      S4Acuity: S4Acuity || " ",
-      Symptom5: Symptom5 || "",
-      S5Acuity: S5Acuity || " "
+
+      Symptom5: Symptom5 || ""
     };
   },
-  validationSchema: Yup.object().shape({
-    Symptom1: Yup.string().required("Atleast 1 Symptom is REQUIRED"),
-    S2Acuity: Yup.string().required("Acuity of Symptom is REQUIRED")
-  }),
+
   handleSubmit(values, { resetForm, setStatus }) {
     axios
       .post(apiEndPoint, values)

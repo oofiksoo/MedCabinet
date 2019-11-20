@@ -17,17 +17,10 @@ const StrainCard = props => {
   return (
     <SCard>
       <img src={bud} alt="flower_image" width="80vw" height="80vh"></img>
-      <h2>
-        {props.id} - {props.sName}
-      </h2>
+      <h2> {props.sName} </h2>
       <div className="Type">
         Type: <em> {props.race} </em>
       </div>
-      {/* <h3> Medical Effects </h3>
-      {medical.map((medical, index) => (
-        <div key={index} className="medical-effects">
-          {medical}
-        </div> */}
     </SCard>
   );
 };
