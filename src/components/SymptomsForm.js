@@ -147,7 +147,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           <p> Select Symptom 1: </p>
           <Field
             as="select"
-            className="Symptom"
+            className="SymptomField"
             name="Symptom1"
             onChange={e => {
               setSymptom(e.target.value);
@@ -167,6 +167,23 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           </Field>
           {touched.Symptom1 && errors.Symptom1 && (
             <p className="error-display"> {errors.Symptom1} </p>
+          )}
+          <p> Select Symptom Severity: </p>
+          <Field as="select" className="SevarityField" name="Sevarity1">
+            <option value="">Select A Symptom</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="5">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </Field>
+          {touched.Sevarity1 && errors.Sevarity1 && (
+            <p className="error-display"> {errors.Sevarity1} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
@@ -189,7 +206,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           <p> Select Symptom 2: </p>
           <Field
             as="select"
-            className="Symptom"
+            className="SymptomField"
             name="Symptom2"
             onChange={e => {
               setSymptom2(e.target.value);
@@ -209,6 +226,23 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           </Field>
           {touched.Symptom2 && errors.Symptom2 && (
             <p className="error-display"> {errors.Symptom2} </p>
+          )}
+          <p> Select Symptom Severity: </p>
+          <Field as="select" className="SevarityField" name="Sevarity2">
+            <option value="">Select A Symptom</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="5">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </Field>
+          {touched.Sevarity2 && errors.Sevarity2 && (
+            <p className="error-display"> {errors.Sevarity2} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
@@ -231,7 +265,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           <p> Select Symptom 3: </p>
           <Field
             as="select"
-            className="Symptom"
+            className="SymptomField"
             name="Symptom3"
             onChange={e => {
               setSymptom3(e.target.value);
@@ -251,6 +285,23 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           </Field>
           {touched.Symptom3 && errors.Symptom3 && (
             <p className="error-display"> {errors.Symptom3} </p>
+          )}
+          <p> Select Symptom Severity: </p>
+          <Field as="select" className="SevarityField" name="Sevarity3">
+            <option value="">Select A Symptom</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="5">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </Field>
+          {touched.Sevarity3 && errors.Sevarity3 && (
+            <p className="error-display"> {errors.Sevarity3} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
@@ -273,7 +324,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           <p> Select Symptom 4: </p>
           <Field
             as="select"
-            className="Symptom"
+            className="SymptomField"
             name="Symptom4"
             onChange={e => {
               setSymptom4(e.target.value);
@@ -293,6 +344,23 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           </Field>
           {touched.Symptom4 && errors.Symptom4 && (
             <p className="error-display"> {errors.Symptom4} </p>
+          )}
+          <p> Select Symptom Severity: </p>
+          <Field as="select" className="SevarityField" name="Sevarity4">
+            <option value="">Select A Symptom</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="5">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </Field>
+          {touched.Sevarity4 && errors.Sevarity4 && (
+            <p className="error-display"> {errors.Sevarity4} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
@@ -315,7 +383,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           <p> Select Symptom 5: </p>
           <Field
             as="select"
-            className="Symptom"
+            className="SymptomField"
             name="Symptom5"
             onChange={e => {
               setSymptom5(e.target.value);
@@ -335,6 +403,23 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           </Field>
           {touched.Symptom2 && errors.Symptom4 && (
             <p className="error-display"> {errors.Symptom4} </p>
+          )}
+          <p> Select Symptom Severity: </p>
+          <Field as="select" className="SevarityField" name="Sevarity5">
+            <option value="">Select A Symptom</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="5">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+          </Field>
+          {touched.Sevarity5 && errors.Sevarity5 && (
+            <p className="error-display"> {errors.Sevarity5} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
