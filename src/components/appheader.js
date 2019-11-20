@@ -14,7 +14,7 @@ export default function AppHeader() {
   return (
     <HeaderContainer>
       <LogoCont>
-        <img src="../../Logo.png" alt="logo" width="40%"></img>
+        <img src="../../Logo.png" alt="logo" width="25%"></img>
       </LogoCont>
     </HeaderContainer>
   );
