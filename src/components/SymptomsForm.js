@@ -15,6 +15,7 @@ const SQuestionCont = styled.section`
   }
 `;
 const QCont = styled.div`
+  padding: 2% 0;
   display: flex;
   justify-content: space-around;
 `;
@@ -143,6 +144,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
   return (
     <Form>
       <SQuestionCont>
+        <hr></hr>
         <QCont>
           <p> Select Symptom 1: </p>
           <Field

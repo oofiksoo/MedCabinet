@@ -1,5 +1,5 @@
 import React from "react";
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 import bud from "./bud.jpg";
 const SCard = styled.div`
   display: flex;
@@ -14,15 +14,34 @@ const SCard = styled.div`
   max-width: 20vw;
   max-height: 20vh;
 `;
+const TypeDiv = styled.div`
+  background-color: forestgreen;
+  width: 100%;
+  font-weight: bold;
+  fort-size: 0.7rem;
+  ${props =>
+    props.primary &&
+    css`
+      background: Purple;
+      border: 1px solid Purple;
+    `}
+
+  ${props =>
+    props.tertiary &&
+    css`
+      background: red;
+      border: 1px solid red;
+    `}
+`;
 
 const StrainCard = props => {
   return (
     <SCard>
       <img src={bud} alt="flower_image" width="80vw" height="80vh" />
       <h2> {props.sName} </h2>
-      <div className="Type">
+      <TypeDiv>
         Type: <em> {props.race} </em>
-      </div>
+      </TypeDiv>
     </SCard>
   );
 };
