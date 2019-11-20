@@ -9,7 +9,7 @@ const Card = styled.div`
   min-height: 15vh;
   max-width:10vw;
   max-height:15vh;
-  margin: 2%;
+  margin: 1%;
   align-items: center;
   border: 2px solid forestgreen;
   border-radius:5px;

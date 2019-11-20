@@ -5,9 +5,9 @@ const SCard = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin: 2%;
+  margin: 1%;
   padding: 2%;
-  border: 1px solid black;
+  border: 2px solid forestgreen;
   border-radius: 10px;
   min-width: 20vw;
   min-height: 20vh;

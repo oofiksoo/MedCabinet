@@ -20,8 +20,9 @@ const QCont = styled.div`
   justify-content: space-around;
 `;
 const RecContainer = styled.div`
-  padding: 2%;
+  padding: 1%;
   display: flex;
+  justify-content: space-around;
 `;
 
 const SButton = styled.button`
@@ -190,7 +191,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
-          {recommendation.slice(11, 16).map(strain => {
+          {recommendation.slice(10, 15).map(strain => {
             return (
               <RecommendationCard
                 key={strain.id}
