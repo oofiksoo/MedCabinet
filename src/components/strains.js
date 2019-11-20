@@ -30,7 +30,7 @@ const StrainCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  padding: 0 8%;
+  padding: 0 2%;
 `;
 const SButton = styled.button`
   background: forestgreen;
@@ -98,11 +98,9 @@ const StrainList = props => {
       <SearchContainer>
         <SearchForm />
       </SearchContainer>
-      <div>
-        <p>{type} strains listed below:</p>
-      </div>
+      <p> All {type} strains listed below:</p>
       <StrainCardContainer>
-        {strains.slice(100, 110).map(strain => {
+        {strains.slice(100, 130).map(strain => {
           return (
             <StrainCard
               key={strain.id}

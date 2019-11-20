@@ -14,14 +14,13 @@ const SRecomendationsCont = styled.section`
   font-size: 1rem;
   min-height: 100%;
   min-width: 80%;
-  padding: 2%;
 `;
 
 export default function Recomendations() {
   return (
     <RecomendationsContainer>
       <SRecomendationsCont>
-        <RecomendationsList />>
+        <RecomendationsList />
       </SRecomendationsCont>
     </RecomendationsContainer>
   );

@@ -91,7 +91,7 @@ function RecomendationList(recomendation) {
       </StrainListControl>
       <p>Recommended {type} strains listed below:</p>
       <StrainCardContainer>
-        {strains.slice(390, 410).map(strain => {
+        {strains.slice(370, 410).map(strain => {
           return (
             <StrainCard
               key={strain.id}
