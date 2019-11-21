@@ -5,16 +5,17 @@ const Card = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  min-width: 10vw;
-  min-height: 15vh;
-  max-width:10vw;
-  max-height:15vh;
+  min-width: 12vw;
+  min-height: 18vh;
+  max-width:12vw;
+  max-height:18vh;
   margin: 1%;
   align-items: center;
   border: 2px solid forestgreen;
   border-radius:5px;
   padding:1%
   font-size:.6rem;
+  font-family: "Segoe Script";
   background-color:whitesmoke;
   img{
     border-radius: 10px;
@@ -25,6 +26,7 @@ const TypeDiv = styled.div`
   width: 100%;
   font-weight: bold;
   fort-size: 0.7rem;
+  font-family: "Segoe Script";
 `;
 
 export default function RecommendationCard(props) {

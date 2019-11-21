@@ -19,7 +19,7 @@ const DashNavContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  background-color: forestgreen;
+  background-color: rgba(34, 139, 34, 0.5);
   width: 12vw;
   border-bottom-right-radius: 50px;
   min-height: 95vh;
@@ -37,6 +37,7 @@ const DashNavItem = styled.button`
   margin: 0.3em;
   padding: 1em;
   font-weight: bold;
+  font-family: "Segoe Script";
   text-decoration: none;
   min-width: 90%;
   cursor: pointer;

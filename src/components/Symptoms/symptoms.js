@@ -3,6 +3,7 @@ import styled from "styled-components";
 import SymptomsForm from "./SymptomsForm";
 const Introduction = styled.div`
   text-align: center;
+  font-family: "Segoe Script";
 `;
 const SymptomsContainer = styled.section`
   padding-left: 13vw;
@@ -11,6 +12,7 @@ const SymptomsContainer = styled.section`
   flex-direction: column;
   justify-content: cnter;
   font-size: 1rem;
+  font-family: "Segoe Script";
   min-height: 100%;
   min-width: 80%;
   p {
@@ -21,6 +23,7 @@ const SFormContainer = styled.section`
   font-size: 1rem;
   padding:2%
   text-align:center;
+  font-family: "Segoe Script";
 `;
 
 export default function Symptoms() {

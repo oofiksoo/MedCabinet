@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const FooterContainer = styled.section`
   font-size: 0.55rem;
+  font-family: "Segoe Script";
 `;
 
 export default function AppFooter() {

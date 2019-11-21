@@ -9,11 +9,12 @@ const SCard = styled.div`
   padding: 1%;
   border: 2px solid forestgreen;
   border-radius: 10px;
-  min-width: 15vw;
-  min-height: 15vh;
-  max-width: 15vw;
-  max-height: 15vh;
+  min-width: 16vw;
+  min-height: 16vh;
+  max-width: 16vw;
+  max-height: 16vh;
   font-size: 0.9rem;
+  font-family: "Segoe Script";
   img {
     border-radius: 20px;
   }
@@ -23,6 +24,7 @@ const TypeDiv = styled.div`
   width: 100%;
   font-weight: bold;
   font-size: 0.6rem;
+  font-family: "Segoe Script";
   ${props =>
     props.primary &&
     css`
