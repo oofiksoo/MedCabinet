@@ -14,6 +14,9 @@ const SCard = styled.div`
   max-width: 15vw;
   max-height: 15vh;
   font-size: 0.9rem;
+  img {
+    border-radius: 20px;
+  }
 `;
 const TypeDiv = styled.div`
   background-color: forestgreen;

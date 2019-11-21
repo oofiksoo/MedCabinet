@@ -5,25 +5,18 @@ const RecomendationsContainer = styled.section`
   font-size: 1rem;
   min-height: 100%;
   min-width: 80%;
-  padding-left: 13vw;
+  padding-left: 12vw;
   padding-top: 16vh;
   p {
     text-align: left;
     font-weight: bold;
+    padding: 0 1%;
   }
 `;
-const SRecomendationsCont = styled.section`
-  font-size: 1rem;
-  min-height: 100%;
-  min-width: 80%;
-`;
-
 export default function Recomendations() {
   return (
     <RecomendationsContainer>
-      <SRecomendationsCont>
-        <RecomendationsList />
-      </SRecomendationsCont>
+      <RecomendationsList />
     </RecomendationsContainer>
   );
 }

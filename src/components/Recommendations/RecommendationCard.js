@@ -15,6 +15,10 @@ const Card = styled.div`
   border-radius:5px;
   padding:1%
   font-size:.6rem;
+  background-color:whitesmoke;
+  img{
+    border-radius: 10px;
+  }
 `;
 const TypeDiv = styled.div`
   background-color: forestgreen;
@@ -26,6 +30,7 @@ const TypeDiv = styled.div`
 export default function RecommendationCard(props) {
   return (
     <Card>
+      <p>Reccomendation Score: {props.id}</p>
       <img src={bud} alt="flower_image" width="60vw" height="50vh" />
       <h2> {props.sName} </h2>{" "}
       <TypeDiv>

@@ -9,7 +9,8 @@ const StrainsContainer = styled.section`
   padding-top: 16vh;
   font-size: 1rem;
   min-height: 100%;
-  max-width: 85%;
+  min-width: 80%;
+  max-width: 80%;
   p {
     text-align: left;
     font-weight: bold;
@@ -71,6 +72,7 @@ export default function StrainList(props) {
 
       .then(response => {
         setStrains(response.data);
+        setFilteredStrains(strains);
       })
 
       .catch(error => {
@@ -98,7 +100,7 @@ export default function StrainList(props) {
             Sativa
           </SButton>
         </StrainListControl>
-        <p> All {type} strains listed below:</p>
+        <h3>All {type} strains listed below:</h3>
         <StrainCardContainer>
           {filteredStrains.map(strain => {
             return (
@@ -127,7 +129,7 @@ export default function StrainList(props) {
           Sativa
         </SButton>
       </StrainListControl>
-      <p> All {type} strains listed below:</p>
+      <h3> All {type} strains listed below:</h3>
       <StrainCardContainer>
         {strains.slice(0, 100).map(strain => {
           return (

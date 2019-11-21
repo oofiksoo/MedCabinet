@@ -12,6 +12,8 @@ const SQuestionCont = styled.section`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  background-color: whitesmoke;
+  border-radius: 10px;
   padding: 2%;
   p {
     text-align: left;
@@ -27,6 +29,8 @@ const RecContainer = styled.div`
   padding: 1%;
   display: flex;
   justify-content: space-around;
+  background-color: rgba(34, 139, 34, 0.5);
+  border-radius: 10px;
 `;
 
 const SButton = styled.button`

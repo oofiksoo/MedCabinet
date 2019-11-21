@@ -84,7 +84,7 @@ export default function RecomendationList(props) {
           Sativa
         </SButton>
       </StrainListControl>
-      <p>Recommended {type} strains listed below:</p>
+      <h3>Recommended {type} strains listed below:</h3>
       <StrainCardContainer>
         {strains.slice(208, 260).map(strain => {
           return (
