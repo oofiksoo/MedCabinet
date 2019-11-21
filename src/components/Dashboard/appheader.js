@@ -1,22 +1,22 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../img/Logo.png";
 const HeaderContainer = styled.section`
   display: flex;
+  justify-content: center;
+  position: fixed;
+  background-color: forestgreen;
+  width: 99%;
+  min-height: 13.6vh;
+  border-bottom-right-radius: 50px;
   h1 {
     font-size: 2rem;
-    color: forestgreen;
+    color: white;
+    text-align: center;
+  }
 `;
-const LogoCont = styled.div`
-  display: flex;
-`;
-
 export default function AppHeader() {
   return (
     <HeaderContainer>
-      <LogoCont>
-        <img src={logo} alt="logo" width="25%"></img>
-      </LogoCont>
       <h1>The Med Cabinet®</h1>
     </HeaderContainer>
   );

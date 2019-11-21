@@ -2,10 +2,11 @@ import React from "react";
 import styled from "styled-components";
 import SymptomsForm from "./SymptomsForm";
 const Introduction = styled.div`
-  padding: 0 2%;
   text-align: center;
 `;
 const SymptomsContainer = styled.section`
+  padding-left: 13vw;
+  padding-top: 16vh;
   display: flex;
   flex-direction: column;
   justify-content: cnter;

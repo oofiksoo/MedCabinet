@@ -6,8 +6,12 @@ import WelcomePage from "./welcomepage";
 import Symptoms from "../Symptoms/symptoms";
 import Recomendations from "../Recommendations/recomendations";
 import Strains from "../strains";
+import logo from "../img/Logo.png";
 
 const Dashboard = styled.div`
+  display: flex;
+`;
+const LogoCont = styled.div`
   display: flex;
 `;
 
@@ -18,7 +22,8 @@ const DashNavContainer = styled.div`
   background-color: #058a17;
   width: 12vw;
   border-bottom-right-radius: 50px;
-  min-height: 75vh;
+  min-height: 95vh;
+  position: fixed;
 `;
 const DashNavItem = styled.button`
   display: flex;
@@ -46,6 +51,9 @@ export default function DashNav() {
   return (
     <Dashboard>
       <DashNavContainer>
+        <LogoCont>
+          <img src={logo} alt="logo" width="100%"></img>
+        </LogoCont>
         <NavLink exact to="/">
           <DashNavItem>
             <i className="fas fa-home fa-3x"> </i> <p> Home </p>

@@ -6,6 +6,8 @@ import SearchForm from "./searchform";
 const StrainsContainer = styled.section`
   display: flex;
   flex-direction: column;
+  padding-left: 13vw;
+  padding-top: 16vh;
   font-size: 1rem;
   min-height: 100%;
   min-width: 80%;

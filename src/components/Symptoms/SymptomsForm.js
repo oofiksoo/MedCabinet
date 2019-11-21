@@ -5,6 +5,9 @@ import axios from "axios";
 import styled, { css } from "styled-components";
 import RecommendationCard from "../Recommendations/RecommendationCard";
 const apiEndPoint = "";
+const ErrorContainer = styled.div`
+  color: red;
+`;
 const SQuestionCont = styled.section`
   display: flex;
   flex-direction: column;
@@ -64,20 +67,25 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
   const [recommendation5, setRecommendation5] = useState([]);
   useEffect(() => {
     const getRecommendation = () => {
-      axios
+      if (symptom !== null) {
+        axios
 
-        .get(
-          `https://strainapi.evanbusse.com/VUGyzwt/strains/search/effect/${symptom}`
-        )
+          .get(
+            `https://strainapi.evanbusse.com/VUGyzwt/strains/search/effect/${symptom}`
+          )
 
-        .then(response => {
-          setRecommendation(response.data);
-        })
+          .then(response => {
+            setRecommendation(response.data);
+          })
 
-        .catch(error => {
-          console.error("Server Error", error);
-        });
+          .catch(error => {
+            console.error("Server Error", error);
+          });
+      } else {
+        return console.log("waiting for a selection!");
+      }
     };
+
     getRecommendation();
   }, [symptom]);
   useEffect(() => {
@@ -154,10 +162,56 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
   }, [symptom5]);
   return (
     <Form>
+      <hr></hr>
+      <ErrorContainer>
+        {touched.Symptom1 && errors.Symptom1 && (
+          <p className="error-display">Symptom 1: {errors.Symptom1}</p>
+        )}
+
+        {touched.Severity1 && errors.Severity1 && (
+          <p className="error-display">
+            Symptom 1 Severity: {errors.Severity1}
+          </p>
+        )}
+        {touched.Symptom2 && errors.Symptom2 && (
+          <p className="error-display">Symptom 2: {errors.Symptom2}</p>
+        )}
+        {touched.Severity2 && errors.Severity2 && (
+          <p className="error-display">
+            Symptom 2 Severity: {errors.Severity2}
+          </p>
+        )}
+        {touched.Symptom3 && errors.Symptom3 && (
+          <p className="error-display">Symptom 3: {errors.Symptom3}</p>
+        )}
+        {touched.Severity3 && errors.Severity3 && (
+          <p className="error-display">
+            Symptom 3 Severity: {errors.Severity3}
+          </p>
+        )}
+        {touched.Symptom4 && errors.Symptom4 && (
+          <p className="error-display">Symptom 4: {errors.Symptom4} </p>
+        )}
+        {touched.Severity4 && errors.Severity4 && (
+          <p className="error-display">
+            Symptom 4 Severity: {errors.Severity4}{" "}
+          </p>
+        )}
+        {touched.Symptom5 && errors.Symptom5 && (
+          <p className="error-display">Symptom 5: {errors.Symptom5} </p>
+        )}
+        {touched.Severity5 && errors.Severity5 && (
+          <p className="error-display">
+            Symptom 1 Severity: {errors.Severity5}{" "}
+          </p>
+        )}
+      </ErrorContainer>
       <SQuestionCont>
         <hr></hr>
         <QCont>
-          <p> Select Symptom 1: </p>
+          <label htmlFor="Symptom1">
+            <p>Select Symptom 1:</p>
+          </label>
           <Field
             as="select"
             className="SymptomField"
@@ -165,9 +219,13 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             value={symptom}
             onChange={e => {
               setSymptom(e.target.value);
+              console.log(e.target.value);
+              console.log({ symptom });
             }}
           >
-            <option value="">Select A Symptom</option>
+            <option selected disabled value="">
+              Select A Symptom
+            </option>
             <option value="Depression">Depression</option>
             <option value="Stress">Stress</option>
             <option value="Insomnia">Insomnia</option>
@@ -179,12 +237,13 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="Seizures">Seizures</option>
             <option value="Cramps">Cramps</option>
           </Field>
-          {touched.Symptom1 && errors.Symptom1 && (
-            <p className="error-display"> {errors.Symptom1} </p>
-          )}
-          <p> Select Symptom Severity: </p>
+          <label htmlFor="Severity1">
+            <p>Select Symptom Severity:</p>
+          </label>
           <Field as="select" className="SeverityField" name="Severity1">
-            <option value="">Select Severity</option>
+            <option selected disabled value="">
+              Select Severity
+            </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -196,9 +255,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Severity1 && errors.Severity1 && (
-            <p className="error-display"> {errors.Severity1} </p>
-          )}
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
@@ -217,7 +273,9 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
       <hr></hr>
       <SQuestionCont>
         <QCont>
-          <p> Select Symptom 2: </p>
+          <label htmlFor="Symptom2">
+            <p>Select Symptom 2:</p>
+          </label>
           <Field
             as="select"
             className="SymptomField"
@@ -227,7 +285,9 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
               setSymptom2(e.target.value);
             }}
           >
-            <option value="">Select A Symptom</option>
+            <option selected disabled value="">
+              Select A Symptom
+            </option>
             <option value="Depression">Depression</option>
             <option value="Stress">Stress</option>
             <option value="Insomnia">Insomnia</option>
@@ -239,12 +299,14 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="Seizures">Seizures</option>
             <option value="Cramps">Cramps</option>
           </Field>
-          {touched.Symptom2 && errors.Symptom2 && (
-            <p className="error-display"> {errors.Symptom2} </p>
-          )}
-          <p> Select Symptom Severity: </p>
+
+          <label htmlFor="Severity2">
+            <p>Select Symptom Severity:</p>
+          </label>
           <Field as="select" className="SeverityField" name="Severity2">
-            <option value="">Select Severity</option>
+            <option selected disabled value="">
+              Select Severity
+            </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -256,9 +318,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Severity2 && errors.Severity2 && (
-            <p className="error-display"> {errors.Severity2} </p>
-          )}
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
@@ -277,7 +336,9 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
       <hr></hr>
       <SQuestionCont>
         <QCont>
-          <p> Select Symptom 3: </p>
+          <label htmlFor="Symptom3">
+            <p>Select Symptom 3:</p>
+          </label>
           <Field
             as="select"
             className="SymptomField"
@@ -287,7 +348,9 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
               setSymptom3(e.target.value);
             }}
           >
-            <option value="">Select A Symptom</option>
+            <option selected disabled value="">
+              Select A Symptom
+            </option>
             <option value="Depression">Depression</option>
             <option value="Stress">Stress</option>
             <option value="Insomnia">Insomnia</option>
@@ -299,12 +362,14 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="Seizures">Seizures</option>
             <option value="Cramps">Cramps</option>
           </Field>
-          {touched.Symptom3 && errors.Symptom3 && (
-            <p className="error-display"> {errors.Symptom3} </p>
-          )}
-          <p> Select Symptom Severity: </p>
+
+          <label htmlFor="Severity3">
+            <p>Select Symptom Severity:</p>
+          </label>
           <Field as="select" className="SeverityField" name="Severity3">
-            <option value="">Select Severity</option>
+            <option selected disabled value="">
+              Select Severity
+            </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -316,9 +381,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Severity3 && errors.Severity3 && (
-            <p className="error-display"> {errors.Severity3} </p>
-          )}
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
@@ -337,7 +399,9 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
       <hr></hr>
       <SQuestionCont>
         <QCont>
-          <p> Select Symptom 4: </p>
+          <label htmlFor="Symptom4">
+            <p>Select Symptom 4:</p>
+          </label>
           <Field
             as="select"
             className="SymptomField"
@@ -347,7 +411,9 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
               setSymptom4(e.target.value);
             }}
           >
-            <option value="">Select A Symptom</option>
+            <option selected disabled value="">
+              Select A Symptom
+            </option>
             <option value="Depression">Depression</option>
             <option value="Stress">Stress</option>
             <option value="Insomnia">Insomnia</option>
@@ -359,12 +425,14 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="Seizures">Seizures</option>
             <option value="Cramps">Cramps</option>
           </Field>
-          {touched.Symptom4 && errors.Symptom4 && (
-            <p className="error-display"> {errors.Symptom4} </p>
-          )}
-          <p> Select Symptom Severity: </p>
+
+          <label htmlFor="Severity4">
+            <p>Select Symptom Severity:</p>
+          </label>
           <Field as="select" className="SeverityField" name="Severity4">
-            <option value="">Select Severity</option>
+            <option selected disabled value="">
+              Select Severity
+            </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -376,9 +444,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Severity4 && errors.Severity4 && (
-            <p className="error-display"> {errors.Severity4} </p>
-          )}
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
@@ -397,7 +462,9 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
       <hr></hr>
       <SQuestionCont>
         <QCont>
-          <p> Select Symptom 5: </p>
+          <label htmlFor="Symptom5">
+            <p>Select Symptom 5:</p>
+          </label>
           <Field
             as="select"
             className="SymptomField"
@@ -407,7 +474,9 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
               setSymptom5(e.target.value);
             }}
           >
-            <option value="">Select A Symptom</option>
+            <option selected disabled value="">
+              Select A Symptom
+            </option>
             <option value="Depression">Depression</option>
             <option value="Stress">Stress</option>
             <option value="Insomnia">Insomnia</option>
@@ -419,12 +488,13 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="Seizures">Seizures</option>
             <option value="Cramps">Cramps</option>
           </Field>
-          {touched.Symptom5 && errors.Symptom5 && (
-            <p className="error-display"> {errors.Symptom5} </p>
-          )}
-          <p> Select Symptom Severity: </p>
+          <label htmlFor="Severity5">
+            <p>Select Symptom Severity:</p>
+          </label>
           <Field as="select" className="SeverityField" name="Severity5">
-            <option value="">Select Severity</option>
+            <option selected disabled value="">
+              Select Severity
+            </option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -436,9 +506,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Severity5 && errors.Severity5 && (
-            <p className="error-display"> {errors.Severity5} </p>
-          )}
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
@@ -487,9 +554,13 @@ export default withFormik({
   },
 
   validationSchema: Yup.object().shape({
-    Symptom1: Yup.string().required("Atleast 2 Symptoms are Required"),
+    Symptom1: Yup.string()
+      .required("Atleast 2 Symptoms are Required")
+      .notOneOf([Yup.ref("Symptom2")], "Please Select Unique Symptom Values"),
     Severity1: Yup.string().required("You must select a Symptom Severity"),
-    Symptom2: Yup.string().required("Atleast 2 Symptoms are Required"),
+    Symptom2: Yup.string()
+      .required("Atleast 2 Symptoms are Required")
+      .notOneOf([Yup.ref("Symptom1")], "Please Select Unique Symptom Values"),
     Severity2: Yup.string().required("You must select a Symptom Severity")
   }),
 
