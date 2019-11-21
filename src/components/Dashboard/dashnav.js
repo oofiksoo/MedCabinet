@@ -41,12 +41,7 @@ const DashNavItem = styled.button`
 `;
 
 export default function DashNav() {
-  const [strainToSearch, setStrainToSearch] = useState();
-  const [savedList, setSavedList] = useState([]);
-
-  const addToSavedList = strain => {
-    setSavedList([...savedList, strain]);
-  };
+  const [nameToSearch, setNameToSearch] = useState();
 
   return (
     <Dashboard>
@@ -82,9 +77,8 @@ export default function DashNav() {
         render={props => (
           <Strains
             {...props}
-            strainToSearch={strainToSearch}
-            setStrainToSearch={setStrainToSearch}
-            addToSavedList={addToSavedList}
+            nameToSearch={nameToSearch}
+            setNameToSearch={setNameToSearch}
           />
         )}
       />

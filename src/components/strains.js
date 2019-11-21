@@ -3,7 +3,6 @@ import axios from "axios";
 import StrainCard from "./StrainCard";
 import styled, { css } from "styled-components";
 import SearchForm from "./searchform";
-
 const StrainsContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -16,10 +15,6 @@ const StrainsContainer = styled.section`
     padding: 0 1%;
   }
 `;
-const SearchContainer = styled.div`
-  padding: 2%;
-`;
-
 const StrainListControl = styled.div`
   display: flex;
   justify-content: space-around;
@@ -59,30 +54,75 @@ const SButton = styled.button`
     `}
 `;
 
-const StrainList = props => {
+export default function StrainList(props) {
   const [strains, setStrains] = useState([]);
   const [type, setType] = useState("Indica");
+  const [nameToSearch, setNameToSearch] = useState();
+  const [filteredStrains, setFilteredStrains] = useState([]);
 
+  const filterList = name => {
+    const filteredList = strains.filter(strain =>
+      strain.name.toLowerCase().includes(name.toLowerCase())
+    );
+    setFilteredStrains(filteredList);
+  };
+  const getStrains = () => {
+    axios
+
+      .get(
+        `https://strainapi.evanbusse.com/VUGyzwt/strains/search/race/${type}`
+      )
+
+      .then(response => {
+        setStrains(response.data);
+      })
+
+      .catch(error => {
+        console.error("Server Error", error);
+      });
+  };
   useEffect(() => {
-    const getStrains = () => {
-      axios
-
-        .get(
-          `https://strainapi.evanbusse.com/VUGyzwt/strains/search/race/${type}`
-        )
-
-        .then(response => {
-          setStrains(response.data);
-        })
-
-        .catch(error => {
-          console.error("Server Error", error);
-        });
-    };
-
     getStrains();
   }, [type]);
+  useEffect(() => {
+    filterList(props.nameToSearch);
+  }, [props.nameToSearch]);
 
+  if (filteredStrains.length > 0) {
+    return (
+      <StrainsContainer>
+        <StrainListControl>
+          <SButton name="indica" onClick={() => setType("Indica")}>
+            Indica
+          </SButton>
+          <SButton primary name="hybrid" onClick={() => setType("Hybrid")}>
+            Hybrid
+          </SButton>
+          <SButton tertiary name="sativa" onClick={() => setType("Sativa")}>
+            Sativa
+          </SButton>
+        </StrainListControl>
+        <SearchForm
+          {...props}
+          setNameToSearch={setNameToSearch}
+          nameToSearch={nameToSearch}
+        />
+        <p> All {type} strains listed below:</p>
+        <StrainCardContainer>
+          {filteredStrains.map(strain => {
+            return (
+              <StrainCard
+                key={strain.id}
+                sName={strain.name}
+                race={strain.race}
+                id={strain.id}
+              />
+            );
+          })}
+        </StrainCardContainer>
+      </StrainsContainer>
+    );
+  }
   return (
     <StrainsContainer>
       <StrainListControl>
@@ -96,9 +136,11 @@ const StrainList = props => {
           Sativa
         </SButton>
       </StrainListControl>
-      <SearchContainer>
-        <SearchForm />
-      </SearchContainer>
+      <SearchForm
+        {...props}
+        setNameToSearch={setNameToSearch}
+        nameToSearch={nameToSearch}
+      />
       <p> All {type} strains listed below:</p>
       <StrainCardContainer>
         {strains.slice(0, 100).map(strain => {
@@ -114,6 +156,4 @@ const StrainList = props => {
       </StrainCardContainer>
     </StrainsContainer>
   );
-};
-
-export default StrainList;
+}

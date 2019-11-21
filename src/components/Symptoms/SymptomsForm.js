@@ -5,7 +5,7 @@ import axios from "axios";
 import styled, { css } from "styled-components";
 import RecommendationCard from "../Recommendations/RecommendationCard";
 const apiEndPoint = "";
-const SQuestionCont = styled.section `
+const SQuestionCont = styled.section`
   display: flex;
   flex-direction: column;
   padding: 2%;
@@ -14,30 +14,39 @@ const SQuestionCont = styled.section `
     font-weight: bold;
   }
 `;
-const QCont = styled.div `
+const QCont = styled.div`
   padding: 2% 0;
   display: flex;
   justify-content: space-around;
 `;
-const RecContainer = styled.div `
+const RecContainer = styled.div`
   padding: 1%;
   display: flex;
   justify-content: space-around;
 `;
 
-const SButton = styled.button `
-  background: transparent;
+const SButton = styled.button`
+  background: forestgreen;
+  min-height: 3vh;
+  min-width: 8vw;
+  border: 1px solid forestgreen;
   border-radius: 3px;
-  border: 2px solid forestgreen;
-  color: forestgreen;
+  color: white;
   margin: 0.5em 1em;
   padding: 0.25em 1em;
-
+  cursor: pointer;
   ${props =>
     props.primary &&
     css`
-      background: forestgreen;
-      color: white;
+      background: Purple;
+      border: 1px solid Purple;
+    `}
+
+  ${props =>
+    props.tertiary &&
+    css`
+      background: red;
+      border: 1px solid red;
     `}
 `;
 
@@ -172,8 +181,8 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <p className="error-display"> {errors.Symptom1} </p>
           )}
           <p> Select Symptom Severity: </p>
-          <Field as="select" className="SevarityField" name="Sevarity1">
-            <option value="">Select A Symptom</option>
+          <Field as="select" className="SeverityField" name="Severity1">
+            <option value="">Select Severity</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -185,8 +194,8 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Sevarity1 && errors.Sevarity1 && (
-            <p className="error-display"> {errors.Sevarity1} </p>
+          {touched.Severity1 && errors.Severity1 && (
+            <p className="error-display"> {errors.Severity1} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
@@ -231,8 +240,8 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <p className="error-display"> {errors.Symptom2} </p>
           )}
           <p> Select Symptom Severity: </p>
-          <Field as="select" className="SevarityField" name="Sevarity2">
-            <option value="">Select A Symptom</option>
+          <Field as="select" className="SeverityField" name="Severity2">
+            <option value="">Select Severity</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -244,13 +253,13 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Sevarity2 && errors.Sevarity2 && (
-            <p className="error-display"> {errors.Sevarity2} </p>
+          {touched.Severity2 && errors.Severity2 && (
+            <p className="error-display"> {errors.Severity2} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
-          {recommendation2.slice(10, 15).map(strain => {
+          {recommendation2.slice(7, 12).map(strain => {
             return (
               <RecommendationCard
                 key={strain.id}
@@ -290,8 +299,8 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <p className="error-display"> {errors.Symptom3} </p>
           )}
           <p> Select Symptom Severity: </p>
-          <Field as="select" className="SevarityField" name="Sevarity3">
-            <option value="">Select A Symptom</option>
+          <Field as="select" className="SeverityField" name="Severity3">
+            <option value="">Select Severity</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -303,13 +312,13 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Sevarity3 && errors.Sevarity3 && (
-            <p className="error-display"> {errors.Sevarity3} </p>
+          {touched.Severity3 && errors.Severity3 && (
+            <p className="error-display"> {errors.Severity3} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
-          {recommendation3.slice(20, 25).map(strain => {
+          {recommendation3.slice(0, 5).map(strain => {
             return (
               <RecommendationCard
                 key={strain.id}
@@ -349,8 +358,8 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <p className="error-display"> {errors.Symptom4} </p>
           )}
           <p> Select Symptom Severity: </p>
-          <Field as="select" className="SevarityField" name="Sevarity4">
-            <option value="">Select A Symptom</option>
+          <Field as="select" className="SeverityField" name="Severity4">
+            <option value="">Select Severity</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -362,13 +371,13 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Sevarity4 && errors.Sevarity4 && (
-            <p className="error-display"> {errors.Sevarity4} </p>
+          {touched.Severity4 && errors.Severity4 && (
+            <p className="error-display"> {errors.Severity4} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
-          {recommendation4.slice(30, 35).map(strain => {
+          {recommendation4.slice(5, 10).map(strain => {
             return (
               <RecommendationCard
                 key={strain.id}
@@ -408,8 +417,8 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <p className="error-display"> {errors.Symptom4} </p>
           )}
           <p> Select Symptom Severity: </p>
-          <Field as="select" className="SevarityField" name="Sevarity5">
-            <option value="">Select A Symptom</option>
+          <Field as="select" className="SeverityField" name="Severity5">
+            <option value="">Select Severity</option>
             <option value="1">1</option>
             <option value="2">2</option>
             <option value="3">3</option>
@@ -421,8 +430,8 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="9">9</option>
             <option value="10">10</option>
           </Field>
-          {touched.Sevarity5 && errors.Sevarity5 && (
-            <p className="error-display"> {errors.Sevarity5} </p>
+          {touched.Severity5 && errors.Severity5 && (
+            <p className="error-display"> {errors.Severity5} </p>
           )}
         </QCont>
         <p>Recommendations:</p>
@@ -447,25 +456,27 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
 export default withFormik({
   mapPropsToValues({
     Symptom1,
-
+    Severity1,
     Symptom2,
-
+    Severity2,
     Symptom3,
-
+    Severity3,
     Symptom4,
-
-    Symptom5
+    Severity4,
+    Symptom5,
+    Severity5
   }) {
     return {
       Symptom1: Symptom1 || "",
-
+      Severity1: Severity1 || "",
       Symptom2: Symptom2 || "",
-
+      Severity2: Severity2 || "",
       Symptom3: Symptom3 || "",
-
+      Severity3: Severity3 || "",
       Symptom4: Symptom4 || "",
-
-      Symptom5: Symptom5 || ""
+      Severity4: Severity4 || "",
+      Symptom5: Symptom5 || "",
+      Severity5: Severity5 || ""
     };
   },
 
