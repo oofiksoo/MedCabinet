@@ -7,9 +7,5 @@ const WelcomeWrapper = styled.section`
 `;
 
 export default function WelcomePage() {
-  return (
-    <WelcomeWrapper>
-      <h1> Welcome to the Med Cabinet! </h1>
-    </WelcomeWrapper>
-  );
+  return <WelcomeWrapper></WelcomeWrapper>;
 }

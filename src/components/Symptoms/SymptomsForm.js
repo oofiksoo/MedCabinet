@@ -8,6 +8,7 @@ const apiEndPoint = "";
 const SQuestionCont = styled.section`
   display: flex;
   flex-direction: column;
+  justify-content: center;
   padding: 2%;
   p {
     text-align: left;
@@ -189,7 +190,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-            <option value="5">6</option>
+            <option value="6">6</option>
             <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>
@@ -249,7 +250,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-            <option value="5">6</option>
+            <option value="6">6</option>
             <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>
@@ -309,7 +310,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-            <option value="5">6</option>
+            <option value="6">6</option>
             <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>
@@ -369,7 +370,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-            <option value="5">6</option>
+            <option value="6">6</option>
             <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>
@@ -418,8 +419,8 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="Seizures">Seizures</option>
             <option value="Cramps">Cramps</option>
           </Field>
-          {touched.Symptom2 && errors.Symptom4 && (
-            <p className="error-display"> {errors.Symptom4} </p>
+          {touched.Symptom5 && errors.Symptom5 && (
+            <p className="error-display"> {errors.Symptom5} </p>
           )}
           <p> Select Symptom Severity: </p>
           <Field as="select" className="SeverityField" name="Severity5">
@@ -429,7 +430,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             <option value="3">3</option>
             <option value="4">4</option>
             <option value="5">5</option>
-            <option value="5">6</option>
+            <option value="6">6</option>
             <option value="7">7</option>
             <option value="8">8</option>
             <option value="9">9</option>

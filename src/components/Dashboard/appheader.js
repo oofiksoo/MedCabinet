@@ -3,14 +3,13 @@ import styled from "styled-components";
 import logo from "../img/Logo.png";
 const HeaderContainer = styled.section`
   display: flex;
-  justify-content: flex-start;
-  color: black;
+  h1 {
+    font-size: 2rem;
+    color: forestgreen;
 `;
 const LogoCont = styled.div`
   display: flex;
-  justify-content: flex-start;
 `;
-const FavoritesContainer = styled.div``;
 
 export default function AppHeader() {
   return (
@@ -18,7 +17,7 @@ export default function AppHeader() {
       <LogoCont>
         <img src={logo} alt="logo" width="25%"></img>
       </LogoCont>
-      <FavoritesContainer> </FavoritesContainer>
+      <h1>The Med Cabinet®</h1>
     </HeaderContainer>
   );
 }
