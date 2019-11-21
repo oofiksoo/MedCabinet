@@ -161,6 +161,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             as="select"
             className="SymptomField"
             name="Symptom1"
+            value={symptom}
             onChange={e => {
               setSymptom(e.target.value);
             }}
@@ -220,6 +221,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             as="select"
             className="SymptomField"
             name="Symptom2"
+            value={symptom2}
             onChange={e => {
               setSymptom2(e.target.value);
             }}
@@ -279,6 +281,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             as="select"
             className="SymptomField"
             name="Symptom3"
+            value={symptom3}
             onChange={e => {
               setSymptom3(e.target.value);
             }}
@@ -338,6 +341,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             as="select"
             className="SymptomField"
             name="Symptom4"
+            value={symptom4}
             onChange={e => {
               setSymptom4(e.target.value);
             }}
@@ -397,6 +401,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
             as="select"
             className="SymptomField"
             name="Symptom5"
+            value={symptom5}
             onChange={e => {
               setSymptom5(e.target.value);
             }}
@@ -479,6 +484,13 @@ export default withFormik({
       Severity5: Severity5 || ""
     };
   },
+
+  validationSchema: Yup.object().shape({
+    Symptom1: Yup.string().required("Atleast 2 Symptoms are Required"),
+    Severity1: Yup.string().required("You must select a Symptom Severity"),
+    Symptom2: Yup.string().required("Atleast 2 Symptoms are Required"),
+    Severity2: Yup.string().required("You must select a Symptom Severity")
+  }),
 
   handleSubmit(values, { resetForm, setStatus }) {
     axios
