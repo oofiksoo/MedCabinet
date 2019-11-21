@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import StrainCard from "../StrainCard";
 import styled, { css } from "styled-components";
-
+import SearchForm from "../searchform";
 const StrainsContainer = styled.section`
   display: flex;
   flex-direction: column;
@@ -53,10 +53,10 @@ const SButton = styled.button`
     `}
 `;
 
-function RecomendationList(recomendation) {
+export default function RecomendationList(props) {
   const [strains, setStrains] = useState([]);
   const [type, setType] = useState("Indica");
-
+  const [nameToSearch, setNameToSearch] = useState();
   useEffect(() => {
     const getStrains = () => {
       axios
@@ -90,6 +90,11 @@ function RecomendationList(recomendation) {
           Sativa
         </SButton>
       </StrainListControl>
+      <SearchForm
+        {...props}
+        setNameToSearch={setNameToSearch}
+        nameToSearch={nameToSearch}
+      />
       <p>Recommended {type} strains listed below:</p>
       <StrainCardContainer>
         {strains.slice(208, 260).map(strain => {
@@ -106,4 +111,3 @@ function RecomendationList(recomendation) {
     </StrainsContainer>
   );
 }
-export default RecomendationList;
