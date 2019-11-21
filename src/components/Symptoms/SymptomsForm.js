@@ -191,7 +191,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
-          {recommendation.slice(10, 15).map(strain => {
+          {recommendation.slice(0, 5).map(strain => {
             return (
               <RecommendationCard
                 key={strain.id}
@@ -250,7 +250,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
-          {recommendation2.slice(20, 25).map(strain => {
+          {recommendation2.slice(10, 15).map(strain => {
             return (
               <RecommendationCard
                 key={strain.id}
@@ -309,7 +309,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
-          {recommendation3.slice(30, 35).map(strain => {
+          {recommendation3.slice(20, 25).map(strain => {
             return (
               <RecommendationCard
                 key={strain.id}
@@ -368,7 +368,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
-          {recommendation4.slice(40, 45).map(strain => {
+          {recommendation4.slice(30, 35).map(strain => {
             return (
               <RecommendationCard
                 key={strain.id}
@@ -427,7 +427,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
         </QCont>
         <p>Recommendations:</p>
         <RecContainer>
-          {recommendation5.slice(50, 55).map(strain => {
+          {recommendation5.slice(10, 15).map(strain => {
             return (
               <RecommendationCard
                 key={strain.id}
