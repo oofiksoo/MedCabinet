@@ -6,19 +6,20 @@ const SCard = styled.div`
   flex-direction: column;
   align-items: center;
   margin: 1%;
-  padding: 2%;
+  padding: 1%;
   border: 2px solid forestgreen;
   border-radius: 10px;
-  min-width: 20vw;
-  min-height: 20vh;
-  max-width: 20vw;
-  max-height: 20vh;
+  min-width: 15vw;
+  min-height: 15vh;
+  max-width: 15vw;
+  max-height: 15vh;
+  font-size: 0.9rem;
 `;
 const TypeDiv = styled.div`
   background-color: forestgreen;
   width: 100%;
   font-weight: bold;
-  fort-size: 0.7rem;
+  font-size: 0.6rem;
   ${props =>
     props.primary &&
     css`
@@ -38,7 +39,7 @@ const StrainCard = props => {
   return (
     <SCard>
       <img src={bud} alt="flower_image" width="80vw" height="80vh" />
-      <h2> {props.sName} </h2>
+      <p> {props.sName} </p>
       <TypeDiv>
         Type: <em> {props.race} </em>
       </TypeDiv>

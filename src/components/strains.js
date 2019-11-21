@@ -4,7 +4,7 @@ import StrainCard from "./StrainCard";
 import styled, { css } from "styled-components";
 import SearchForm from "./searchform";
 
-const StrainsContainer = styled.section `
+const StrainsContainer = styled.section`
   display: flex;
   flex-direction: column;
   font-size: 1rem;
@@ -13,26 +13,28 @@ const StrainsContainer = styled.section `
   p {
     text-align: left;
     font-weight: bold;
+    padding: 0 1%;
   }
 `;
-const SearchContainer = styled.div `
+const SearchContainer = styled.div`
   padding: 2%;
 `;
 
-const StrainListControl = styled.div `
+const StrainListControl = styled.div`
   display: flex;
   justify-content: space-around;
   padding: 2%;
   background-color: white;
 `;
-const StrainCardContainer = styled.div `
-  margin: 2%;
+const StrainCardContainer = styled.div`
+  margin: 0 2%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
   padding: 0 2%;
 `;
-const SButton = styled.button `
+const SButton = styled.button`
   background: forestgreen;
   min-height: 15vh;
   min-width: 15vw;

@@ -6,7 +6,7 @@ import WelcomePage from "./welcomepage";
 import Symptoms from "./symptoms";
 import Recomendations from "./recomendations";
 import Strains from "./strains";
-
+import SavedStrains from "./Favorites";
 const Dashboard = styled.div`
   display: flex;
 `;
@@ -42,35 +42,41 @@ const DashNavItem = styled.button`
 
 export default function DashNav() {
   const [strainToSearch, setStrainToSearch] = useState();
+  const [savedList, setSavedList] = useState([]);
+
+  const addToSavedList = strain => {
+    setSavedList([...savedList, strain]);
+  };
+
   return (
     <Dashboard>
       <DashNavContainer>
         <NavLink exact to="/">
           <DashNavItem>
             <i className="fas fa-home fa-3x"> </i> <p> Home </p>
-          </DashNavItem>
-        </NavLink>
+          </DashNavItem>{" "}
+        </NavLink>{" "}
         <NavLink to="/symptoms">
           <DashNavItem>
-            <i className="fas fa-notes-medical fa-3x"> </i>
-            <p> Recommendations by Symptom </p>
-          </DashNavItem>
-        </NavLink>
+            <i className="fas fa-notes-medical fa-3x"> </i>{" "}
+            <p> Recommendations by Symptom </p>{" "}
+          </DashNavItem>{" "}
+        </NavLink>{" "}
         <NavLink to="/recomendations">
           <DashNavItem>
-            <i className="fas fa-prescription-bottle-alt fa-3x"> </i>
-            <p> My Recomendations </p>
-          </DashNavItem>
-        </NavLink>
+            <i className="fas fa-prescription-bottle-alt fa-3x"> </i>{" "}
+            <p> My Recomendations </p>{" "}
+          </DashNavItem>{" "}
+        </NavLink>{" "}
         <NavLink to="/strains">
           <DashNavItem>
             <i className="fas fa-cannabis fa-3x"> </i> <p> Browse Strains </p>
-          </DashNavItem>
-        </NavLink>
-      </DashNavContainer>
-      <Route exact path="/" component={WelcomePage} />
-      <Route path="/symptoms" component={Symptoms} />
-      <Route path="/recomendations" component={Recomendations} />
+          </DashNavItem>{" "}
+        </NavLink>{" "}
+      </DashNavContainer>{" "}
+      <Route exact path="/" component={WelcomePage} />{" "}
+      <Route path="/symptoms" component={Symptoms} />{" "}
+      <Route path="/recomendations" component={Recomendations} />{" "}
       <Route
         path="/strains"
         render={props => (
@@ -78,9 +84,10 @@ export default function DashNav() {
             {...props}
             strainToSearch={strainToSearch}
             setStrainToSearch={setStrainToSearch}
+            addToSavedList={addToSavedList}
           />
         )}
-      />
+      />{" "}
     </Dashboard>
   );
 }
