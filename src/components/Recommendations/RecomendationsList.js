@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import StrainCard from "./StrainCard";
+import StrainCard from "../StrainCard";
 import styled, { css } from "styled-components";
 
 const StrainsContainer = styled.section`
@@ -92,7 +92,7 @@ function RecomendationList(recomendation) {
       </StrainListControl>
       <p>Recommended {type} strains listed below:</p>
       <StrainCardContainer>
-        {strains.slice(210, 260).map(strain => {
+        {strains.slice(208, 260).map(strain => {
           return (
             <StrainCard
               key={strain.id}

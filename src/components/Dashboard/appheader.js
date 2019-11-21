@@ -1,7 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Favorites from "./Favorites";
-
+import logo from "../img/Logo.png";
 const HeaderContainer = styled.section`
   display: flex;
   justify-content: flex-start;
@@ -17,9 +16,9 @@ export default function AppHeader() {
   return (
     <HeaderContainer>
       <LogoCont>
-        <img src="../../Logo.png" alt="logo" width="25%"></img>
+        <img src={logo} alt="logo" width="25%"></img>
       </LogoCont>
-      <FavoritesContainer></FavoritesContainer>
+      <FavoritesContainer> </FavoritesContainer>
     </HeaderContainer>
   );
 }

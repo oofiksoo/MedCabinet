@@ -3,9 +3,9 @@ import { withFormik, Form, Field } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
 import styled, { css } from "styled-components";
-import RecommendationCard from "./RecommendationCard";
+import RecommendationCard from "../Recommendations/RecommendationCard";
 const apiEndPoint = "";
-const SQuestionCont = styled.section`
+const SQuestionCont = styled.section `
   display: flex;
   flex-direction: column;
   padding: 2%;
@@ -14,18 +14,18 @@ const SQuestionCont = styled.section`
     font-weight: bold;
   }
 `;
-const QCont = styled.div`
+const QCont = styled.div `
   padding: 2% 0;
   display: flex;
   justify-content: space-around;
 `;
-const RecContainer = styled.div`
+const RecContainer = styled.div `
   padding: 1%;
   display: flex;
   justify-content: space-around;
 `;
 
-const SButton = styled.button`
+const SButton = styled.button `
   background: transparent;
   border-radius: 3px;
   border: 2px solid forestgreen;

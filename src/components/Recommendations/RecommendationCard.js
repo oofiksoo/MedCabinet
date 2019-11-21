@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import bud from "./bud.jpg";
+import bud from "../img/bud.jpg";
 const Card = styled.div`
   display: flex;
   flex-direction: column;

@@ -1,8 +1,8 @@
 import React from "react";
 import "./App.css";
-import AppHeader from "./components/appheader";
-import DashNav from "./components/dashnav";
-import AppFooter from "./components/appfooter";
+import AppHeader from "./components/Dashboard/appheader";
+import DashNav from "./components/Dashboard/dashnav";
+import AppFooter from "./components/Dashboard/appfooter";
 
 function App() {
   return (
