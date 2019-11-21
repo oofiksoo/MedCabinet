@@ -2,6 +2,14 @@ import React, { useState } from "react";
 import styled, { css } from "styled-components";
 const SearchDiv = styled.div`
   display: flex;
+  flexwrap: nowrap;
+  padding-left: 65vw;
+  padding-top: 5vh;
+  position: fixed;
+  z-index: 999;
+  color: white;
+  white-space: nowrap;
+  font-weight: bold;
 `;
 const SearchContainer = styled.div`
   padding: 2%;
@@ -53,7 +61,7 @@ export default function SearchForm(props) {
     <SearchContainer>
       <SearchDiv>
         <form onSubmit={handleSubmit}>
-          <label htmlFor="criteria"> Search </label>
+          <label htmlFor="criteria">Search: </label>
           <input
             id="criteria"
             value={searchCriteria.criteria}
@@ -62,7 +70,7 @@ export default function SearchForm(props) {
             name="criteria"
             type="text"
           />
-          <SButton> Submit </SButton>
+          <SButton primary> Submit </SButton>
         </form>
       </SearchDiv>
     </SearchContainer>

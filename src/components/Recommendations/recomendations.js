@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import RecomendationsList from "./RecomendationsList";
-const RecomendationsContainer = styled.section `
+const RecomendationsContainer = styled.section`
   font-size: 1rem;
   min-height: 100%;
   min-width: 80%;
@@ -12,21 +12,18 @@ const RecomendationsContainer = styled.section `
     font-weight: bold;
   }
 `;
-const SRecomendationsCont = styled.section `
+const SRecomendationsCont = styled.section`
   font-size: 1rem;
   min-height: 100%;
   min-width: 80%;
 `;
 
 export default function Recomendations() {
-    return ( <
-        RecomendationsContainer >
-        <
-        SRecomendationsCont >
-        <
-        RecomendationsList / >
-        <
-        /SRecomendationsCont>{" "} <
-        /RecomendationsContainer>
-    );
+  return (
+    <RecomendationsContainer>
+      <SRecomendationsCont>
+        <RecomendationsList />
+      </SRecomendationsCont>
+    </RecomendationsContainer>
+  );
 }

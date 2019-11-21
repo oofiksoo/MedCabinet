@@ -2,15 +2,14 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import StrainCard from "./StrainCard";
 import styled, { css } from "styled-components";
-import SearchForm from "./searchform";
 const StrainsContainer = styled.section`
   display: flex;
   flex-direction: column;
-  padding-left: 13vw;
+  padding-left: 8vw;
   padding-top: 16vh;
   font-size: 1rem;
   min-height: 100%;
-  min-width: 80%;
+  max-width: 85%;
   p {
     text-align: left;
     font-weight: bold;
@@ -20,16 +19,12 @@ const StrainsContainer = styled.section`
 const StrainListControl = styled.div`
   display: flex;
   justify-content: space-around;
-  padding: 2%;
-  background-color: white;
 `;
 const StrainCardContainer = styled.div`
-  margin: 0 2%;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  padding: 0 2%;
 `;
 const SButton = styled.button`
   background: forestgreen;
@@ -59,7 +54,6 @@ const SButton = styled.button`
 export default function StrainList(props) {
   const [strains, setStrains] = useState([]);
   const [type, setType] = useState("Indica");
-  const [nameToSearch, setNameToSearch] = useState();
   const [filteredStrains, setFilteredStrains] = useState([]);
 
   const filterList = name => {
@@ -104,11 +98,6 @@ export default function StrainList(props) {
             Sativa
           </SButton>
         </StrainListControl>
-        <SearchForm
-          {...props}
-          setNameToSearch={setNameToSearch}
-          nameToSearch={nameToSearch}
-        />
         <p> All {type} strains listed below:</p>
         <StrainCardContainer>
           {filteredStrains.map(strain => {
@@ -138,11 +127,6 @@ export default function StrainList(props) {
           Sativa
         </SButton>
       </StrainListControl>
-      <SearchForm
-        {...props}
-        setNameToSearch={setNameToSearch}
-        nameToSearch={nameToSearch}
-      />
       <p> All {type} strains listed below:</p>
       <StrainCardContainer>
         {strains.slice(0, 100).map(strain => {

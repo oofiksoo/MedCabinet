@@ -4,8 +4,9 @@ const HeaderContainer = styled.section`
   display: flex;
   justify-content: center;
   position: fixed;
+  padding-left: 12vw;
   background-color: forestgreen;
-  width: 99%;
+  width: 87%;
   min-height: 13.6vh;
   border-bottom-right-radius: 50px;
   h1 {

@@ -521,7 +521,7 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
           })}
         </RecContainer>
       </SQuestionCont>
-      <SButton> Submit Symptoms </SButton>
+      <SButton type="submit"> Submit Symptoms </SButton>
     </Form>
   );
 };
@@ -568,6 +568,7 @@ export default withFormik({
     axios
       .post(apiEndPoint, values)
       .then(response => {
+        console.log(values);
         setStatus(response.data);
         resetForm();
       })

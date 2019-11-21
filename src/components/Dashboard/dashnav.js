@@ -7,7 +7,7 @@ import Symptoms from "../Symptoms/symptoms";
 import Recomendations from "../Recommendations/recomendations";
 import Strains from "../strains";
 import logo from "../img/Logo.png";
-
+import SearchForm from "../searchform";
 const Dashboard = styled.div`
   display: flex;
 `;
@@ -80,6 +80,17 @@ export default function DashNav() {
       <Route exact path="/" component={WelcomePage} />
       <Route path="/symptoms" component={Symptoms} />
       <Route path="/recomendations" component={Recomendations} />
+      <Route path="/recomendations" component={Recomendations} />
+      <Route
+        path="/strains"
+        render={props => (
+          <SearchForm
+            {...props}
+            setNameToSearch={setNameToSearch}
+            nameToSearch={nameToSearch}
+          />
+        )}
+      />
       <Route
         path="/strains"
         render={props => (
