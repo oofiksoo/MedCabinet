@@ -99,6 +99,11 @@ export default function WelcomePage() {
             conditions.
           </li>
         </ul>
+        <p>
+          {" "}
+          Source: National Institute on Drug Abuse; National Institutes of
+          Health; U.S. Department of Health and Human Services.{" "}
+        </p>
       </MedFacts>
     </WelcomeWrapper>
   );
