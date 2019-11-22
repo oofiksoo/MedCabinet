@@ -26,7 +26,7 @@ const SCard = styled.div`
   }
 `;
 const TypeDiv = styled.div`
-  background-color: forestgreen;
+  background-color: rgba(34, 139, 34, 0.5);
   width: 100%;
   font-weight: bold;
   font-size: 0.9rem;

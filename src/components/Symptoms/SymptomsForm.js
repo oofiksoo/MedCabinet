@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import axios from "axios";
 import styled, { css } from "styled-components";
 import RecommendationCard from "../Recommendations/RecommendationCard";
-const apiEndPoint = "";
+const apiEndPoint = "https://postman-echo.com/post";
 const ErrorContainer = styled.div`
   color: red;
 `;
@@ -215,7 +215,6 @@ const SymptomsForm = ({ values, errors, touched, status }) => {
         )}
       </ErrorContainer>
       <SQuestionCont>
-        <hr></hr>
         <QCont>
           <label htmlFor="Symptom1">
             <p>Select Symptom 1:</p>
@@ -561,16 +560,7 @@ export default withFormik({
     };
   },
 
-  validationSchema: Yup.object().shape({
-    Symptom1: Yup.string()
-      .required("Atleast 2 Symptoms are Required")
-      .notOneOf([Yup.ref("Symptom2")], "Please Select Unique Symptom Values"),
-    Severity1: Yup.string().required("You must select a Symptom Severity"),
-    Symptom2: Yup.string()
-      .required("Atleast 2 Symptoms are Required")
-      .notOneOf([Yup.ref("Symptom1")], "Please Select Unique Symptom Values"),
-    Severity2: Yup.string().required("You must select a Symptom Severity")
-  }),
+  validationSchema: Yup.object().shape({}),
 
   handleSubmit(values, { resetForm, setStatus }) {
     axios
@@ -578,6 +568,7 @@ export default withFormik({
       .then(response => {
         console.log(values);
         setStatus(response.data);
+        console.log(response);
         resetForm();
       })
       .catch(err => console.log(err.response));

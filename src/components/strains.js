@@ -76,7 +76,7 @@ export default function StrainList(props) {
 
       .then(response => {
         setStrains(response.data);
-        setFilteredStrains(strains);
+        //setFilteredStrains(strains);
       })
 
       .catch(error => {
