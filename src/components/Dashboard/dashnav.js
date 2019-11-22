@@ -54,7 +54,7 @@ export default function DashNav() {
     <Dashboard>
       <DashNavContainer>
         <LogoCont>
-          <img src={logo} alt="logo" width="100%"></img>
+          <img src={logo} alt="logo" width="100%" />
         </LogoCont>
         <NavLink exact to="/">
           <DashNavItem>

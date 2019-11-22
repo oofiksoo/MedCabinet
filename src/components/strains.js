@@ -12,6 +12,11 @@ const StrainsContainer = styled.section`
   min-height: 100%;
   min-width: 80%;
   max-width: 80%;
+  h3 {
+    background-color: rgba(34, 139, 34, 0.5);
+    border-radius: 20px;
+    margin-left: 1%;
+  }
   p {
     text-align: left;
     font-weight: bold;

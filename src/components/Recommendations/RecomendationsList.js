@@ -14,6 +14,11 @@ const StrainsContainer = styled.section`
     font-weight: bold;
     font-family: "Script MT";
   }
+  h3 {
+    background-color: rgba(34, 139, 34, 0.5);
+    border-radius: 20px;
+    margin-left: 1%;
+  }
 `;
 const StrainListControl = styled.div`
   display: flex;
