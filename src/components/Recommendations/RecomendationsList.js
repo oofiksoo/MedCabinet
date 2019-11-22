@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import StrainCard from "../StrainCard";
 import styled, { css } from "styled-components";
-const StrainsContainer = styled.section`
+const StrainsContainer = styled.section `
   display: flex;
   flex-direction: column;
   font-size: 1rem;
@@ -20,19 +20,19 @@ const StrainsContainer = styled.section`
     margin-left: 1%;
   }
 `;
-const StrainListControl = styled.div`
+const StrainListControl = styled.div `
   display: flex;
   justify-content: space-around;
   font-family: "Script MT";
 `;
-const StrainCardContainer = styled.div`
+const StrainCardContainer = styled.div `
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
   font-family: "Script MT";
 `;
-const SButton = styled.button`
+const SButton = styled.button `
   background: forestgreen;
   min-height: 15vh;
   min-width: 15vw;
@@ -43,6 +43,8 @@ const SButton = styled.button`
   padding: 0.25em 1em;
   cursor: pointer;
   font-family: "Script MT";
+  font-size: 1.5rem;
+  font-weight: bold;
   ${props =>
     props.primary &&
     css`
