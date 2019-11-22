@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 const DLContainer = styled.div`
-  padding-left: 13vw;
+  padding-left: 8vw;
   padding-top: 18vh;
   width: 100%;
   display: flex;
