@@ -56,14 +56,14 @@ export default function DisplayDispensary() {
       <DLocator>
         <h3>Local Dispensary Information:</h3>
         <iframe
-          src="http://www.thcfinder.com/webapi/?sid=0&near=5&strains=0&blog=0"
+          src="https://www.thcfinder.com/webapi/?sid=0&near=5&strains=0&blog=0"
           title="Dispensary_Locator"
         ></iframe>
       </DLocator>
       <TStrains>
         <h3>Local Strain Information:</h3>
         <iframe
-          src="http://www.thcfinder.com/webapi/?sid=0&near=0&strains=5&blog=0"
+          src="https://www.thcfinder.com/webapi/?sid=0&near=0&strains=5&blog=0"
           title="Top_Strains"
         ></iframe>
       </TStrains>
