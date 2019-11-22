@@ -1,24 +1,37 @@
 import React from "react";
 import styled, { css } from "styled-components";
-import bud from "./bud.jpg";
+import bud from "../components/img/bud.jpg";
 const SCard = styled.div`
   display: flex;
+  white-space: nowrap;
   flex-direction: column;
   align-items: center;
-  margin: 2%;
-  padding: 2%;
-  border: 1px solid black;
+  margin: 1%;
+  padding: 1%;
+  border: 2px solid forestgreen;
   border-radius: 10px;
-  min-width: 20vw;
-  min-height: 20vh;
-  max-width: 20vw;
-  max-height: 20vh;
+  min-width: 16vw;
+  min-height: 16vh;
+  max-width: 16vw;
+  max-height: 16vh;
+  font-size: 0.9rem;
+  font-family: "Script MT";
+  p {
+    margin: 1rem;
+    font-size: 1.2rem;
+  }
+  img {
+    border-radius: 20px;
+    margin: 0.5rem;
+  }
 `;
 const TypeDiv = styled.div`
   background-color: forestgreen;
   width: 100%;
   font-weight: bold;
-  fort-size: 0.7rem;
+  font-size: 0.9rem;
+  font-family: "Script MT";
+  border-radius: 20px;
   ${props =>
     props.primary &&
     css`
@@ -37,11 +50,11 @@ const TypeDiv = styled.div`
 const StrainCard = props => {
   return (
     <SCard>
-      <img src={bud} alt="flower_image" width="80vw" height="80vh" />
-      <h2> {props.sName} </h2>
       <TypeDiv>
         Type: <em> {props.race} </em>
       </TypeDiv>
+      <img src={bud} alt="flower_image" width="80vw" height="80vh" />
+      <p> {props.sName} </p>
     </SCard>
   );
 };

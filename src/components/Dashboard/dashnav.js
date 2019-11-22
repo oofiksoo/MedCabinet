@@ -3,11 +3,15 @@ import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 import { Route } from "react-router-dom";
 import WelcomePage from "./welcomepage";
-import Symptoms from "./symptoms";
-import Recomendations from "./recomendations";
-import Strains from "./strains";
-
+import Symptoms from "../Symptoms/symptoms";
+import Recomendations from "../Recommendations/recomendations";
+import Strains from "../strains";
+import logo from "../img/Logo.png";
+import SearchForm from "../searchform";
 const Dashboard = styled.div`
+  display: flex;
+`;
+const LogoCont = styled.div`
   display: flex;
 `;
 
@@ -15,10 +19,11 @@ const DashNavContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: space-between;
-  background-color: #058a17;
+  background-color: rgba(34, 139, 34, 0.5);
   width: 12vw;
   border-bottom-right-radius: 50px;
-  min-height: 75vh;
+  min-height: 95vh;
+  position: fixed;
 `;
 const DashNavItem = styled.button`
   display: flex;
@@ -32,6 +37,8 @@ const DashNavItem = styled.button`
   margin: 0.3em;
   padding: 1em;
   font-weight: bold;
+  font-family: "Script MT";
+  font-size: 1rem;
   text-decoration: none;
   min-width: 90%;
   cursor: pointer;
@@ -41,10 +48,14 @@ const DashNavItem = styled.button`
 `;
 
 export default function DashNav() {
-  const [strainToSearch, setStrainToSearch] = useState();
+  const [nameToSearch, setNameToSearch] = useState();
+
   return (
     <Dashboard>
       <DashNavContainer>
+        <LogoCont>
+          <img src={logo} alt="logo" width="100%"></img>
+        </LogoCont>
         <NavLink exact to="/">
           <DashNavItem>
             <i className="fas fa-home fa-3x"> </i> <p> Home </p>
@@ -53,7 +64,7 @@ export default function DashNav() {
         <NavLink to="/symptoms">
           <DashNavItem>
             <i className="fas fa-notes-medical fa-3x"> </i>
-            <p> Recommendations by Symptom </p>
+            <p> Symptom Matcher</p>
           </DashNavItem>
         </NavLink>
         <NavLink to="/recomendations">
@@ -71,13 +82,24 @@ export default function DashNav() {
       <Route exact path="/" component={WelcomePage} />
       <Route path="/symptoms" component={Symptoms} />
       <Route path="/recomendations" component={Recomendations} />
+      <Route path="/recomendations" component={Recomendations} />
+      <Route
+        path="/strains"
+        render={props => (
+          <SearchForm
+            {...props}
+            setNameToSearch={setNameToSearch}
+            nameToSearch={nameToSearch}
+          />
+        )}
+      />
       <Route
         path="/strains"
         render={props => (
           <Strains
             {...props}
-            strainToSearch={strainToSearch}
-            setStrainToSearch={setStrainToSearch}
+            nameToSearch={nameToSearch}
+            setNameToSearch={setNameToSearch}
           />
         )}
       />

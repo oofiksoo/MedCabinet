@@ -1,45 +1,61 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
-import StrainCard from "./StrainCard";
+import StrainCard from "../StrainCard";
 import styled, { css } from "styled-components";
 const StrainsContainer = styled.section`
   display: flex;
   flex-direction: column;
-  align-items: center;
-  padding: 2%;
+  font-size: 1rem;
+  min-height: 100%;
+  min-width: 99%;
+  font-family: "Script MT";
+  p {
+    text-align: left;
+    font-weight: bold;
+    font-family: "Script MT";
+  }
 `;
 const StrainListControl = styled.div`
   display: flex;
-  align-items: center;
+  justify-content: space-around;
+  font-family: "Script MT";
 `;
 const StrainCardContainer = styled.div`
-  margin: 2%;
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-around;
   align-items: center;
-  padding: 2%;
+  font-family: "Script MT";
 `;
 const SButton = styled.button`
-  background: transparent;
-  border-radius: 3px;
-  border: 2px solid forestgreen;
-  color: forestgreen;
+  background: forestgreen;
+  min-height: 15vh;
+  min-width: 15vw;
+  border: 1px solid forestgreen;
+  border-radius: 30px 10px 30px;
+  color: white;
   margin: 0.5em 1em;
   padding: 0.25em 1em;
   cursor: pointer;
-
+  font-family: "Script MT";
   ${props =>
     props.primary &&
     css`
-      background: forestgreen;
-      color: white;
+      background: Purple;
+      border: 1px solid Purple;
+    `}
+
+  ${props =>
+    props.tertiary &&
+    css`
+      background: red;
+      border: 1px solid red;
     `}
 `;
 
-const StrainList = props => {
+export default function RecomendationList(props) {
   const [strains, setStrains] = useState([]);
   const [type, setType] = useState("Indica");
-
   useEffect(() => {
     const getStrains = () => {
       axios
@@ -50,7 +66,6 @@ const StrainList = props => {
 
         .then(response => {
           setStrains(response.data);
-          console.log(response);
         })
 
         .catch(error => {
@@ -67,16 +82,16 @@ const StrainList = props => {
         <SButton name="indica" onClick={() => setType("Indica")}>
           Indica
         </SButton>
-        <SButton name="hybrid" onClick={() => setType("Hybrid")}>
+        <SButton primary name="hybrid" onClick={() => setType("Hybrid")}>
           Hybrid
         </SButton>
-        <SButton name="sativa" onClick={() => setType("Sativa")}>
+        <SButton tertiary name="sativa" onClick={() => setType("Sativa")}>
           Sativa
         </SButton>
       </StrainListControl>
-      <h2>All {type} strains listed below:</h2>
+      <h3>Recommended {type} strains listed below:</h3>
       <StrainCardContainer>
-        {strains.slice(0, 10).map(strain => {
+        {strains.slice(208, 260).map(strain => {
           return (
             <StrainCard
               key={strain.id}
@@ -89,6 +104,4 @@ const StrainList = props => {
       </StrainCardContainer>
     </StrainsContainer>
   );
-};
-
-export default StrainList;
+}
