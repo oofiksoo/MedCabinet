@@ -8,6 +8,7 @@ import Recomendations from "../Recommendations/recomendations";
 import Strains from "../strains";
 import logo from "../img/Logo.png";
 import SearchForm from "../searchform";
+import DisplayDispensary from "../DispensaryLocator/DisplayDispensary";
 const Dashboard = styled.div`
   display: flex;
 `;
@@ -78,10 +79,15 @@ export default function DashNav() {
             <i className="fas fa-cannabis fa-3x"> </i> <p> Browse Strains </p>
           </DashNavItem>
         </NavLink>
+        <NavLink to="/DisplayDispensary">
+          <DashNavItem>
+            <i className="fas fa-cannabis fa-3x"> </i>{" "}
+            <p> Dispensary Locator</p>
+          </DashNavItem>
+        </NavLink>
       </DashNavContainer>
       <Route exact path="/" component={WelcomePage} />
       <Route path="/symptoms" component={Symptoms} />
-      <Route path="/recomendations" component={Recomendations} />
       <Route path="/recomendations" component={Recomendations} />
       <Route
         path="/strains"
@@ -103,6 +109,7 @@ export default function DashNav() {
           />
         )}
       />
+      <Route path="/DisplayDispensary" component={DisplayDispensary} />
     </Dashboard>
   );
 }

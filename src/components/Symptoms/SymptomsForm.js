@@ -560,7 +560,16 @@ export default withFormik({
     };
   },
 
-  validationSchema: Yup.object().shape({}),
+  validationSchema: Yup.object().shape({
+    // Symptom1: Yup.string()
+    // .required("Atleast 2 Symptoms are Required")
+    // .notOneOf([Yup.ref("Symptom2")], "Please Select Unique Symptom Values"),
+    //Severity1: Yup.string().required("You must select a Symptom Severity"),
+    //Symptom2: Yup.string()
+    //.required("Atleast 2 Symptoms are Required")
+    //.notOneOf([Yup.ref("Symptom1")], "Please Select Unique Symptom Values"),
+    //Severity2: Yup.string().required("You must select a Symptom Severity")
+  }),
 
   handleSubmit(values, { resetForm, setStatus }) {
     axios
