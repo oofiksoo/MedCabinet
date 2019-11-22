@@ -8,7 +8,7 @@ const StrainsContainer = styled.section`
   padding-left: 8vw;
   padding-top: 16vh;
   font-size: 1rem;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
   min-height: 100%;
   min-width: 80%;
   max-width: 80%;
@@ -21,14 +21,14 @@ const StrainsContainer = styled.section`
 const StrainListControl = styled.div`
   display: flex;
   justify-content: space-around;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
 `;
 const StrainCardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
 `;
 const SButton = styled.button`
   background: forestgreen;
@@ -40,7 +40,7 @@ const SButton = styled.button`
   margin: 0.5em 1em;
   padding: 0.25em 1em;
   cursor: pointer;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
   ${props =>
     props.primary &&
     css`

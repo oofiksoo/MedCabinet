@@ -12,7 +12,7 @@ const SymptomsContainer = styled.section`
   flex-direction: column;
   justify-content: cnter;
   font-size: 1rem;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
   min-height: 100%;
   min-width: 80%;
   p {
@@ -23,7 +23,7 @@ const SFormContainer = styled.section`
   font-size: 1rem;
   padding:2%
   text-align:center;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
 `;
 
 export default function Symptoms() {

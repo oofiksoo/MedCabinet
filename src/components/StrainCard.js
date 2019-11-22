@@ -3,6 +3,7 @@ import styled, { css } from "styled-components";
 import bud from "../components/img/bud.jpg";
 const SCard = styled.div`
   display: flex;
+  white-space: nowrap;
   flex-direction: column;
   align-items: center;
   margin: 1%;
@@ -14,17 +15,23 @@ const SCard = styled.div`
   max-width: 16vw;
   max-height: 16vh;
   font-size: 0.9rem;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
+  p {
+    margin: 1rem;
+    font-size: 1.2rem;
+  }
   img {
     border-radius: 20px;
+    margin: 0.5rem;
   }
 `;
 const TypeDiv = styled.div`
   background-color: forestgreen;
   width: 100%;
   font-weight: bold;
-  font-size: 0.6rem;
-  font-family: "Segoe Script";
+  font-size: 0.9rem;
+  font-family: "Script MT";
+  border-radius: 20px;
   ${props =>
     props.primary &&
     css`
@@ -43,11 +50,11 @@ const TypeDiv = styled.div`
 const StrainCard = props => {
   return (
     <SCard>
-      <img src={bud} alt="flower_image" width="80vw" height="80vh" />
-      <p> {props.sName} </p>
       <TypeDiv>
         Type: <em> {props.race} </em>
       </TypeDiv>
+      <img src={bud} alt="flower_image" width="80vw" height="80vh" />
+      <p> {props.sName} </p>
     </SCard>
   );
 };

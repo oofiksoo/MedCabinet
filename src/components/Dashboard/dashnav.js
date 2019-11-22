@@ -37,7 +37,8 @@ const DashNavItem = styled.button`
   margin: 0.3em;
   padding: 1em;
   font-weight: bold;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
+  font-size: 1rem;
   text-decoration: none;
   min-width: 90%;
   cursor: pointer;
@@ -63,7 +64,7 @@ export default function DashNav() {
         <NavLink to="/symptoms">
           <DashNavItem>
             <i className="fas fa-notes-medical fa-3x"> </i>
-            <p> Recommendations by Symptom </p>
+            <p> Symptom Matcher</p>
           </DashNavItem>
         </NavLink>
         <NavLink to="/recomendations">

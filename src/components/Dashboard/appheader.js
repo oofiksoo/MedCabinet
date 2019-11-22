@@ -10,7 +10,7 @@ const HeaderContainer = styled.section`
   min-height: 13.6vh;
   border-bottom-right-radius: 50px;
   h1 {
-    font-family: "Segoe Script";
+    font-family: "Script MT";
     font-size: 2rem;
     color: white;
     text-align: center;

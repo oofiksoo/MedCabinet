@@ -18,13 +18,13 @@ const SQuestionCont = styled.section`
   p {
     text-align: left;
     font-weight: bold;
-    font-family: "Segoe Script";
+    font-family: "Script MT";
   }
 `;
 const QCont = styled.div`
   padding: 2% 0;
   display: flex;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
   justify-content: space-around;
 `;
 const RecContainer = styled.div`
@@ -33,7 +33,7 @@ const RecContainer = styled.div`
   justify-content: space-around;
   background-color: rgba(34, 139, 34, 0.5);
   border-radius: 10px;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
 `;
 
 const SButton = styled.button`
@@ -46,7 +46,7 @@ const SButton = styled.button`
   margin: 0.5em 1em;
   padding: 0.25em 1em;
   cursor: pointer;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
   ${props =>
     props.primary &&
     css`

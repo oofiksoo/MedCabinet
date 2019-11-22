@@ -7,12 +7,12 @@ const RecomendationsContainer = styled.section`
   min-width: 80%;
   padding-left: 12vw;
   padding-top: 16vh;
-  font-family: "Segoe Script";
+  font-family: "Script MT";
   p {
     text-align: left;
     font-weight: bold;
     padding: 0 1%;
-    font-family: "Segoe Script";
+    font-family: "Script MT";
   }
 `;
 export default function Recomendations() {

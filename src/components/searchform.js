@@ -10,9 +10,11 @@ const SearchDiv = styled.div`
   color: white;
   white-space: nowrap;
   font-weight: bold;
+  font-family: "Script MT";
 `;
 const SearchContainer = styled.div`
   padding: 2%;
+  font-family: "Script MT";
 `;
 const SButton = styled.button`
   background: forestgreen;
@@ -24,6 +26,7 @@ const SButton = styled.button`
   margin: 0.5em 1em;
   padding: 0.25em 1em;
   cursor: pointer;
+  font-family: "Script MT";
   ${props =>
     props.primary &&
     css`
