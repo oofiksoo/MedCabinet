@@ -1,21 +1,27 @@
 import React from "react";
 import styled from "styled-components";
 const DLContainer = styled.div`
+  padding-left: 13vw;
+  padding-top: 18vh;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   font-family: "Script MT";
 `;
 const DLocator = styled.div`
-  padding-left: 13vw;
-  padding-top: 18vh;
   display: flex;
   justfiy-content: center;
   flex-direction: column;
   align-items: center;
   align-content: center;
-  height: 50vh;
-  width: 38vw;
+  height: 48.75vh;
+  width: 24vw;
   margin: 2%;
+  h3 {
+    background-color: rgba(34, 139, 34, 0.5);
+    border-radius: 20px;
+    padding: 0 5%;
+  }
   iframe {
     display: flex;
     flex-direction: column;
@@ -29,15 +35,19 @@ const DLocator = styled.div`
   }
 `;
 const TStrains = styled.div`
-  padding-top: 18vh;
   display: flex;
   flex-direction: column;
   justfiy-content: center;
   align-items: center;
   align-content: center;
-  height: 50vh;
-  width: 38vw;
+  height: 48.75vh;
+  width: 24vw;
   margin: 2%;
+  h3 {
+    background-color: rgba(34, 139, 34, 0.5);
+    border-radius: 20px;
+    padding: 0 5%;
+  }
   iframe {
     display: flex;
     flex-direction: column;

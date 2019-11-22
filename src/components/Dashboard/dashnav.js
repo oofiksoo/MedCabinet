@@ -14,6 +14,9 @@ const Dashboard = styled.div`
 `;
 const LogoCont = styled.div`
   display: flex;
+  background: transparent;
+  img {
+  }
 `;
 
 const DashNavContainer = styled.div`
