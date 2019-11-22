@@ -81,7 +81,7 @@ export default function DashNav() {
         </NavLink>
         <NavLink to="/DisplayDispensary">
           <DashNavItem>
-            <i className="fas fa-cannabis fa-3x"> </i>{" "}
+            <i className="fas fa-search-location fa-3x"></i>
             <p> Dispensary Locator</p>
           </DashNavItem>
         </NavLink>
